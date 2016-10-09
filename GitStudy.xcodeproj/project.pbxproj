@@ -12,6 +12,18 @@
 		39979BBC1DAA209C006A37DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39979BBA1DAA209C006A37DC /* Main.storyboard */; };
 		39979BBE1DAA209C006A37DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39979BBD1DAA209C006A37DC /* Assets.xcassets */; };
 		39979BC11DAA209C006A37DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39979BBF1DAA209C006A37DC /* LaunchScreen.storyboard */; };
+		39979BE31DAA20F5006A37DC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BCB1DAA20F5006A37DC /* UIColor+Extension.swift */; };
+		39979BE41DAA20F5006A37DC /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BCD1DAA20F5006A37DC /* DateExtension.swift */; };
+		39979BE51DAA20F5006A37DC /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BCF1DAA20F5006A37DC /* UIImageExtension.swift */; };
+		39979BE61DAA20F5006A37DC /* Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BD21DAA20F5006A37DC /* Commit.swift */; };
+		39979BE71DAA20F5006A37DC /* Subjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BD41DAA20F5006A37DC /* Subjects.swift */; };
+		39979BE81DAA20F5006A37DC /* CommitRootViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BD81DAA20F5006A37DC /* CommitRootViewCell.swift */; };
+		39979BE91DAA20F5006A37DC /* CommitRootViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39979BD91DAA20F5006A37DC /* CommitRootViewCell.xib */; };
+		39979BEA1DAA20F5006A37DC /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BDB1DAA20F5006A37DC /* HomeViewCell.swift */; };
+		39979BEB1DAA20F5006A37DC /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39979BDC1DAA20F5006A37DC /* HomeViewCell.xib */; };
+		39979BEC1DAA20F5006A37DC /* CommitRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BDE1DAA20F5006A37DC /* CommitRootViewController.swift */; };
+		39979BED1DAA20F5006A37DC /* CommitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BE01DAA20F5006A37DC /* CommitViewController.swift */; };
+		39979BEE1DAA20F5006A37DC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BE21DAA20F5006A37DC /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +34,18 @@
 		39979BBD1DAA209C006A37DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39979BC01DAA209C006A37DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39979BC21DAA209C006A37DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39979BCB1DAA20F5006A37DC /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		39979BCD1DAA20F5006A37DC /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		39979BCF1DAA20F5006A37DC /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		39979BD21DAA20F5006A37DC /* Commit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commit.swift; sourceTree = "<group>"; };
+		39979BD41DAA20F5006A37DC /* Subjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subjects.swift; sourceTree = "<group>"; };
+		39979BD81DAA20F5006A37DC /* CommitRootViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitRootViewCell.swift; sourceTree = "<group>"; };
+		39979BD91DAA20F5006A37DC /* CommitRootViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommitRootViewCell.xib; sourceTree = "<group>"; };
+		39979BDB1DAA20F5006A37DC /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
+		39979BDC1DAA20F5006A37DC /* HomeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
+		39979BDE1DAA20F5006A37DC /* CommitRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitRootViewController.swift; sourceTree = "<group>"; };
+		39979BE01DAA20F5006A37DC /* CommitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitViewController.swift; sourceTree = "<group>"; };
+		39979BE21DAA20F5006A37DC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +79,9 @@
 			isa = PBXGroup;
 			children = (
 				39979BC81DAA20AA006A37DC /* Resources */,
+				39979BC91DAA20F5006A37DC /* Extensions */,
+				39979BD01DAA20F5006A37DC /* Model */,
+				39979BD51DAA20F5006A37DC /* View */,
 				39979BB61DAA209C006A37DC /* AppDelegate.swift */,
 				39979BB81DAA209C006A37DC /* ViewController.swift */,
 				39979BC21DAA209C006A37DC /* Info.plist */,
@@ -70,6 +97,127 @@
 				39979BBF1DAA209C006A37DC /* LaunchScreen.storyboard */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		39979BC91DAA20F5006A37DC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				39979BCA1DAA20F5006A37DC /* ColorExtension */,
+				39979BCC1DAA20F5006A37DC /* DataExtension */,
+				39979BCE1DAA20F5006A37DC /* UIImageExtension */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		39979BCA1DAA20F5006A37DC /* ColorExtension */ = {
+			isa = PBXGroup;
+			children = (
+				39979BCB1DAA20F5006A37DC /* UIColor+Extension.swift */,
+			);
+			path = ColorExtension;
+			sourceTree = "<group>";
+		};
+		39979BCC1DAA20F5006A37DC /* DataExtension */ = {
+			isa = PBXGroup;
+			children = (
+				39979BCD1DAA20F5006A37DC /* DateExtension.swift */,
+			);
+			path = DataExtension;
+			sourceTree = "<group>";
+		};
+		39979BCE1DAA20F5006A37DC /* UIImageExtension */ = {
+			isa = PBXGroup;
+			children = (
+				39979BCF1DAA20F5006A37DC /* UIImageExtension.swift */,
+			);
+			path = UIImageExtension;
+			sourceTree = "<group>";
+		};
+		39979BD01DAA20F5006A37DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				39979BD11DAA20F5006A37DC /* Commit */,
+				39979BD31DAA20F5006A37DC /* CommitNumber */,
+				39979BD41DAA20F5006A37DC /* Subjects.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		39979BD11DAA20F5006A37DC /* Commit */ = {
+			isa = PBXGroup;
+			children = (
+				39979BD21DAA20F5006A37DC /* Commit.swift */,
+			);
+			path = Commit;
+			sourceTree = "<group>";
+		};
+		39979BD31DAA20F5006A37DC /* CommitNumber */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CommitNumber;
+			sourceTree = "<group>";
+		};
+		39979BD51DAA20F5006A37DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				39979BD61DAA20F5006A37DC /* Cell */,
+				39979BDD1DAA20F5006A37DC /* Commit */,
+				39979BE11DAA20F5006A37DC /* Home */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		39979BD61DAA20F5006A37DC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				39979BD71DAA20F5006A37DC /* CommitRootViewCell */,
+				39979BDA1DAA20F5006A37DC /* HomeViewCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		39979BD71DAA20F5006A37DC /* CommitRootViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				39979BD81DAA20F5006A37DC /* CommitRootViewCell.swift */,
+				39979BD91DAA20F5006A37DC /* CommitRootViewCell.xib */,
+			);
+			path = CommitRootViewCell;
+			sourceTree = "<group>";
+		};
+		39979BDA1DAA20F5006A37DC /* HomeViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				39979BDB1DAA20F5006A37DC /* HomeViewCell.swift */,
+				39979BDC1DAA20F5006A37DC /* HomeViewCell.xib */,
+			);
+			path = HomeViewCell;
+			sourceTree = "<group>";
+		};
+		39979BDD1DAA20F5006A37DC /* Commit */ = {
+			isa = PBXGroup;
+			children = (
+				39979BDE1DAA20F5006A37DC /* CommitRootViewController.swift */,
+				39979BDF1DAA20F5006A37DC /* CommitViewController */,
+			);
+			path = Commit;
+			sourceTree = "<group>";
+		};
+		39979BDF1DAA20F5006A37DC /* CommitViewController */ = {
+			isa = PBXGroup;
+			children = (
+				39979BE01DAA20F5006A37DC /* CommitViewController.swift */,
+			);
+			path = CommitViewController;
+			sourceTree = "<group>";
+		};
+		39979BE11DAA20F5006A37DC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				39979BE21DAA20F5006A37DC /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +283,8 @@
 				39979BC11DAA209C006A37DC /* LaunchScreen.storyboard in Resources */,
 				39979BBE1DAA209C006A37DC /* Assets.xcassets in Resources */,
 				39979BBC1DAA209C006A37DC /* Main.storyboard in Resources */,
+				39979BEB1DAA20F5006A37DC /* HomeViewCell.xib in Resources */,
+				39979BE91DAA20F5006A37DC /* CommitRootViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,8 +295,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39979BE71DAA20F5006A37DC /* Subjects.swift in Sources */,
+				39979BE61DAA20F5006A37DC /* Commit.swift in Sources */,
+				39979BE31DAA20F5006A37DC /* UIColor+Extension.swift in Sources */,
+				39979BE81DAA20F5006A37DC /* CommitRootViewCell.swift in Sources */,
+				39979BE41DAA20F5006A37DC /* DateExtension.swift in Sources */,
+				39979BEC1DAA20F5006A37DC /* CommitRootViewController.swift in Sources */,
 				39979BB91DAA209C006A37DC /* ViewController.swift in Sources */,
+				39979BE51DAA20F5006A37DC /* UIImageExtension.swift in Sources */,
 				39979BB71DAA209C006A37DC /* AppDelegate.swift in Sources */,
+				39979BEA1DAA20F5006A37DC /* HomeViewCell.swift in Sources */,
+				39979BED1DAA20F5006A37DC /* CommitViewController.swift in Sources */,
+				39979BEE1DAA20F5006A37DC /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

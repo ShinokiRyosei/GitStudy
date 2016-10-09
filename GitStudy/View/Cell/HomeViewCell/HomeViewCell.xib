@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11521.1" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeViewCell" id="gTV-IL-0wX" customClass="HomeViewCell" customModule="GitStudy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4o-dR-wuT">
+                        <color key="backgroundColor" red="0.30272237819999998" green="0.88978849469999999" blue="0.34899931810000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="S4o-dR-wuT" secondAttribute="bottom" id="9wX-w0-Ybe"/>
+                <constraint firstItem="S4o-dR-wuT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="baa-ZV-vrd"/>
+                <constraint firstItem="S4o-dR-wuT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="h2j-qh-aXC"/>
+                <constraint firstAttribute="trailing" secondItem="S4o-dR-wuT" secondAttribute="trailing" id="tCq-IK-QiQ"/>
+            </constraints>
+        </collectionViewCell>
+    </objects>
+</document>
