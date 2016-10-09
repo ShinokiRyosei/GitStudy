@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreData
 
 class CommitViewController: UIViewController {
     
@@ -34,17 +33,6 @@ class CommitViewController: UIViewController {
     var pickerView: UIPickerView = UIPickerView()
     var image: UIImage?
     var subject: Subjects = .other
-    var commitNumber: CommitNumber?
-    
-    let persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "GitStudy")
-        container.loadPersistentStores(completionHandler: { (storeDescriptioin, error) in
-            if let err = error as NSError? {
-                fatalError("Unresolved error \(err), \(err.userInfo)")
-            }
-        })
-        return container
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,48 +41,21 @@ class CommitViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        imageView.image = image
+        //        imageView.image = image
     }
     
     func setCommitBtn() {
         let leftBtn: UIBarButtonItem = UIBarButtonItem(title: "Commit", style: .done, target: self, action: #selector(self.commit))
-        self.navigationItem.leftBarButtonItem = leftBtn
+        self.navigationItem.rightBarButtonItem = leftBtn
     }
     
     func commit() {
         let now = Date()
-        let context = persistentContainer.viewContext
-        let commit = NSEntityDescription.insertNewObject(forEntityName: "Commit", into: context) as! Commit
-        commit.image = image?.resize()?.data()
-        commit.message = textView.text
-        commit.createdAt = now
-        commit.subjects = subject.hashValue as NSNumber?
-        self.fetchCommitNumber(on: now.day())
-        do {
-            try context.save()
-        }catch {
-            
+        guard let img: UIImage = image else {
+            return
         }
-    }
-    
-    func fetchCommitNumber(on date: Date) {
-        let request: NSFetchRequest<CommitNumber> = CommitNumber.fetchRequest()
-        request.returnsObjectsAsFaults = false
-        request.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: false)]
-        request.predicate = NSPredicate(format: "createdAt = %@", date as CVarArg)
-        let asyncRequest = NSAsynchronousFetchRequest<CommitNumber>(fetchRequest: request, completionBlock: { (result: NSAsynchronousFetchResult<CommitNumber>) in
-            if result.finalResult?[0] != nil {
-                self.commitNumber = result.finalResult?[0]
-                self.commitNumber?.number += 1
-            }
-            
-        })
-        
-        do {
-            try persistentContainer.viewContext.execute(asyncRequest)
-        }catch {
-            
-        }
+        Commit.create(message: textView.text, image: img, createdAt: now, subject: subject.hashValue)?.save()
+        CommitNumber.hasContributions(createdAt: now.day())?.create(createdAt: now.day())
     }
 }
 
@@ -113,10 +74,10 @@ extension CommitViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return subject.count()
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 1
+        return subject.count()
     }
 }
