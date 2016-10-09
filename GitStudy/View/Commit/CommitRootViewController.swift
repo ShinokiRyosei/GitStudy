@@ -61,7 +61,7 @@ class CommitRootViewController: UIViewController {
     
     func setDoneBtn() {
         let leftBtn: UIBarButtonItem = UIBarButtonItem(title: String.ionicon(with: .androidCheckbox), style: .done, target: self, action: #selector(self.done))
-        self.navigationItem.leftBarButtonItem = leftBtn
+        self.navigationItem.rightBarButtonItem = leftBtn
     }
     
     func done() {
