@@ -24,7 +24,30 @@
 		39979BEC1DAA20F5006A37DC /* CommitRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BDE1DAA20F5006A37DC /* CommitRootViewController.swift */; };
 		39979BED1DAA20F5006A37DC /* CommitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BE01DAA20F5006A37DC /* CommitViewController.swift */; };
 		39979BEE1DAA20F5006A37DC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BE21DAA20F5006A37DC /* HomeViewController.swift */; };
+		39979BF41DAA2287006A37DC /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39979BF01DAA2287006A37DC /* Realm.framework */; };
+		39979BF51DAA2287006A37DC /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39979BF01DAA2287006A37DC /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		39979BF61DAA2287006A37DC /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39979BF11DAA2287006A37DC /* RealmSwift.framework */; };
+		39979BF71DAA2287006A37DC /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39979BF11DAA2287006A37DC /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		39A1F0E31DAA2AA800AE0EE2 /* CommitNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1F0E21DAA2AA800AE0EE2 /* CommitNumber.swift */; };
+		39A1F0E51DAA346D00AE0EE2 /* IoniconsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A1F0E41DAA346D00AE0EE2 /* IoniconsKit.framework */; };
+		39A1F0E61DAA346D00AE0EE2 /* IoniconsKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39A1F0E41DAA346D00AE0EE2 /* IoniconsKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		39979BF81DAA2287006A37DC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				39979BF51DAA2287006A37DC /* Realm.framework in Embed Frameworks */,
+				39A1F0E61DAA346D00AE0EE2 /* IoniconsKit.framework in Embed Frameworks */,
+				39979BF71DAA2287006A37DC /* RealmSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		39979BB31DAA209C006A37DC /* GitStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +69,10 @@
 		39979BDE1DAA20F5006A37DC /* CommitRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitRootViewController.swift; sourceTree = "<group>"; };
 		39979BE01DAA20F5006A37DC /* CommitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitViewController.swift; sourceTree = "<group>"; };
 		39979BE21DAA20F5006A37DC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		39979BF01DAA2287006A37DC /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		39979BF11DAA2287006A37DC /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		39A1F0E21DAA2AA800AE0EE2 /* CommitNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitNumber.swift; sourceTree = "<group>"; };
+		39A1F0E41DAA346D00AE0EE2 /* IoniconsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IoniconsKit.framework; path = Carthage/Build/iOS/IoniconsKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +80,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39979BF41DAA2287006A37DC /* Realm.framework in Frameworks */,
+				39A1F0E51DAA346D00AE0EE2 /* IoniconsKit.framework in Frameworks */,
+				39979BF61DAA2287006A37DC /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +92,9 @@
 		39979BAA1DAA209C006A37DC = {
 			isa = PBXGroup;
 			children = (
+				39A1F0E41DAA346D00AE0EE2 /* IoniconsKit.framework */,
+				39979BF01DAA2287006A37DC /* Realm.framework */,
+				39979BF11DAA2287006A37DC /* RealmSwift.framework */,
 				39979BB51DAA209C006A37DC /* GitStudy */,
 				39979BB41DAA209C006A37DC /* Products */,
 			);
@@ -154,6 +187,7 @@
 		39979BD31DAA20F5006A37DC /* CommitNumber */ = {
 			isa = PBXGroup;
 			children = (
+				39A1F0E21DAA2AA800AE0EE2 /* CommitNumber.swift */,
 			);
 			path = CommitNumber;
 			sourceTree = "<group>";
@@ -230,6 +264,7 @@
 				39979BAF1DAA209C006A37DC /* Sources */,
 				39979BB01DAA209C006A37DC /* Frameworks */,
 				39979BB11DAA209C006A37DC /* Resources */,
+				39979BF81DAA2287006A37DC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,6 +288,7 @@
 					39979BB21DAA209C006A37DC = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = SLHYE76MHB;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -296,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39979BE71DAA20F5006A37DC /* Subjects.swift in Sources */,
+				39A1F0E31DAA2AA800AE0EE2 /* CommitNumber.swift in Sources */,
 				39979BE61DAA20F5006A37DC /* Commit.swift in Sources */,
 				39979BE31DAA20F5006A37DC /* UIColor+Extension.swift in Sources */,
 				39979BE81DAA20F5006A37DC /* CommitRootViewCell.swift in Sources */,
@@ -428,6 +465,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SLHYE76MHB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GitStudy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tv.shinoki.GitStudy;
@@ -441,6 +482,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SLHYE76MHB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GitStudy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tv.shinoki.GitStudy;
@@ -468,6 +513,7 @@
 				39979BC71DAA209C006A37DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
