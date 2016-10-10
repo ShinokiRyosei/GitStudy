@@ -21,27 +21,38 @@ class CommitViewController: UIViewController {
         }
     }
     
-    @IBOutlet var textField: UITextField! {
-        didSet {
-            textField.inputView = pickerView
-            pickerView.delegate = self
-            pickerView.dataSource = self
-            textField.text = subject.string()
-        }
-    }
-    
-    var pickerView: UIPickerView = UIPickerView()
+    @IBOutlet var textField: UITextField!
+    var toolBar: UIToolbar!
+    var pickerView: UIPickerView!
     var image: UIImage?
     var subject: Subjects = .other
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setCommitBtn()
+        self.setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //        imageView.image = image
+        textView.becomeFirstResponder()
+    }
+    
+    func setup() {
+        pickerView = UIPickerView()
+        toolBar = UIToolbar(frame: CGRect(x: 0, y: self.view.frame.size.height/6, width: self.view.frame.size.width, height: 40.0))
+        toolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
+        toolBar.backgroundColor = UIColor.black
+        toolBar.barStyle = UIBarStyle.black
+        toolBar.tintColor = UIColor.white
+        textField.inputView = pickerView
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        let toolBarButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(self.close))
+        toolBarButton.tag = 1
+        toolBar.items = [toolBarButton]
+        textField.inputAccessoryView = toolBar
+        textField.text = subject.string()
     }
     
     func setCommitBtn() {
@@ -57,9 +68,22 @@ class CommitViewController: UIViewController {
         Commit.create(message: textView.text, image: img, createdAt: now, subject: subject.hashValue)?.save()
         CommitNumber.hasContributions(createdAt: now.day())?.create(createdAt: now.day())
     }
+    
+    func close() {
+        textField.resignFirstResponder()
+    }
 }
 
 extension CommitViewController: UITextViewDelegate {
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        textView.resignFirstResponder()
+    }
+    
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        textView.resignFirstResponder()
+        return true
+    }
     
 }
 
