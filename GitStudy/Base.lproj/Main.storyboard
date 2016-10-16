@@ -103,7 +103,7 @@
         <!--Item-->
         <scene sceneID="q3W-D6-MVq">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5ac-R2-bNu" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5ac-R2-bNu" customClass="NavigationViewController" customModule="GitStudy" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="sR7-sF-6mG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Phs-os-dMh">
@@ -228,7 +228,7 @@
         <!--Item-->
         <scene sceneID="M7K-9j-35T">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gu5-Ic-vUL" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gu5-Ic-vUL" customClass="NavigationViewController" customModule="GitStudy" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="gZp-rW-IAt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Mc-70-cgY">
