@@ -10,9 +10,10 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    let cellMargin: CGFloat = 2.0
+    fileprivate let cellMargin: CGFloat = 2.0
+    fileprivate var numbers: [CommitNumber] = []
     
-    @IBOutlet var collectionView: UICollectionView! {
+    @IBOutlet private weak var collectionView: UICollectionView! {
         didSet {
             collectionView.delegate = self
             collectionView.dataSource = self
@@ -22,6 +23,12 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        numbers = CommitNumber.fetch()
+        collectionView.reloadData()
     }
 }
 
