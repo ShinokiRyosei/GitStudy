@@ -9,6 +9,7 @@
 import UIKit
 import Photos
 import IoniconsKit
+import JEToolkit
 
 class CommitRootViewController: UIViewController {
     
@@ -24,7 +25,7 @@ class CommitRootViewController: UIViewController {
         didSet {
             collectionView.delegate = self
             collectionView.dataSource = self
-            collectionView.register(UINib(nibName: "CommitRootViewCell", bundle: nil), forCellWithReuseIdentifier: "CommitRootViewCell")
+            collectionView.registerCellClass(CommitRootViewCell.self)
         }
     }
     
@@ -87,7 +88,7 @@ extension CommitRootViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CommitRootViewCell", for: indexPath) as! CommitRootViewCell
+        let cell = collectionView.dequeueReusableCell(with: CommitRootViewCell.self, for: indexPath) as! CommitRootViewCell
         cell.imageView.image = images[indexPath.row]
         return cell
     }

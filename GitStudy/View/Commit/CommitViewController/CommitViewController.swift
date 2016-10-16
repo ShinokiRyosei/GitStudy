@@ -97,7 +97,7 @@ class CommitViewController: UIViewController {
         }
         let commit = Commit.create(message: textView.text, image: img, createdAt: now, subject: subject.hashValue)
         commit?.save()
-        if let commitNumber: CommitNumber = CommitNumber.hasContributions(createdAt: now.day()) {
+        if let commitNumber: CommitNumber = CommitNumber.hasContributions(at: now.day()) {
             commitNumber.update()
             CommitNumber_Commit.create(withCommit: commit!, withCommitNumber: commitNumber).save()
         }else {

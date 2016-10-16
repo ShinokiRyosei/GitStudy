@@ -13,11 +13,11 @@ class CommitNumber: Object {
     
     static let realm = try! Realm()
     
-    dynamic private var id: Int = 0
+    dynamic var id: Int = 0
     dynamic var contributions: Int = 0
     dynamic var createdAt: Date!
     
-    static func hasContributions(createdAt: Date) -> CommitNumber?{
+    static func hasContributions(at createdAt: Date) -> CommitNumber?{
         if let num = realm.objects(CommitNumber.self).filter("createdAt == %@", createdAt).first {
             return num
         }else {
@@ -35,6 +35,11 @@ class CommitNumber: Object {
             CommitNumber.realm.add(num)
         }
         return num
+    }
+    
+    static func fetch(with id: Int) -> CommitNumber? {
+        let object = CommitNumber.realm.objects(CommitNumber.self).filter("id == %d", id).first
+        return object
     }
     
     static func fetch() -> [CommitNumber]{
