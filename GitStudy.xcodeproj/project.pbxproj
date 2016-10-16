@@ -31,6 +31,8 @@
 		39979BEE1DAA20F5006A37DC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BE21DAA20F5006A37DC /* HomeViewController.swift */; };
 		39A1F0E31DAA2AA800AE0EE2 /* CommitNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1F0E21DAA2AA800AE0EE2 /* CommitNumber.swift */; };
 		39A7787A1DB388200047DDB1 /* CommitDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A778791DB388200047DDB1 /* CommitDetailViewController.swift */; };
+		39A7787E1DB3896E0047DDB1 /* CommitDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7787C1DB3896E0047DDB1 /* CommitDetailTableViewCell.swift */; };
+		39A7787F1DB3896E0047DDB1 /* CommitDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39A7787D1DB3896E0047DDB1 /* CommitDetailTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -73,6 +75,8 @@
 		39979BE21DAA20F5006A37DC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		39A1F0E21DAA2AA800AE0EE2 /* CommitNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitNumber.swift; sourceTree = "<group>"; };
 		39A778791DB388200047DDB1 /* CommitDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommitDetailViewController.swift; path = Detail/CommitDetailViewController.swift; sourceTree = "<group>"; };
+		39A7787C1DB3896E0047DDB1 /* CommitDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommitDetailTableViewCell.swift; path = CommitDetail/CommitDetailTableViewCell.swift; sourceTree = "<group>"; };
+		39A7787D1DB3896E0047DDB1 /* CommitDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommitDetailTableViewCell.xib; path = CommitDetail/CommitDetailTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +230,7 @@
 			children = (
 				39979BD71DAA20F5006A37DC /* CommitRootViewCell */,
 				39979BDA1DAA20F5006A37DC /* HomeViewCell */,
+				39A778801DB389740047DDB1 /* CommitDetail */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -280,6 +285,15 @@
 				39A778791DB388200047DDB1 /* CommitDetailViewController.swift */,
 			);
 			name = Detail;
+			sourceTree = "<group>";
+		};
+		39A778801DB389740047DDB1 /* CommitDetail */ = {
+			isa = PBXGroup;
+			children = (
+				39A7787C1DB3896E0047DDB1 /* CommitDetailTableViewCell.swift */,
+				39A7787D1DB3896E0047DDB1 /* CommitDetailTableViewCell.xib */,
+			);
+			name = CommitDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39979BC11DAA209C006A37DC /* LaunchScreen.storyboard in Resources */,
+				39A7787F1DB3896E0047DDB1 /* CommitDetailTableViewCell.xib in Resources */,
 				39979BBE1DAA209C006A37DC /* Assets.xcassets in Resources */,
 				39979BBC1DAA209C006A37DC /* Main.storyboard in Resources */,
 				39979BEB1DAA20F5006A37DC /* HomeViewCell.xib in Resources */,
@@ -389,6 +404,7 @@
 				39979BEC1DAA20F5006A37DC /* CommitRootViewController.swift in Sources */,
 				39979BB91DAA209C006A37DC /* ViewController.swift in Sources */,
 				39979BE51DAA20F5006A37DC /* UIImageExtension.swift in Sources */,
+				39A7787E1DB3896E0047DDB1 /* CommitDetailTableViewCell.swift in Sources */,
 				39A7787A1DB388200047DDB1 /* CommitDetailViewController.swift in Sources */,
 				39979BB71DAA209C006A37DC /* AppDelegate.swift in Sources */,
 				3993E2DF1DB2878400DF922B /* CommitNumber_Commit.swift in Sources */,
