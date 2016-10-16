@@ -28,4 +28,16 @@ extension Date {
         components.day = day
         return Calendar.current.date(from: components)!
     }
+    
+    func pastThirtyOneDay() -> Date {
+        let cal = Calendar(identifier: .gregorian)
+        let prevMonth: Date = cal.date(byAdding: .day, value: -365, to: self)!
+        return prevMonth
+    }
+    
+    func past(to date: Date) -> Int{
+        let cal = Calendar.current
+        let components = cal.dateComponents([.day], from: self, to: date)
+        return components.day!
+    }
 }
