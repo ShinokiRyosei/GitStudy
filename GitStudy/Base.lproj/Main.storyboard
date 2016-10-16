@@ -84,7 +84,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="6qF-NQ-Rnx">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3iB-ab-Kds" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3iB-ab-Kds" customClass="TabBarController" customModule="GitStudy" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="EAk-1g-95N">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -100,11 +100,11 @@
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="q3W-D6-MVq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5ac-R2-bNu" customClass="NavigationViewController" customModule="GitStudy" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="sR7-sF-6mG"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="sR7-sF-6mG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Phs-os-dMh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -225,11 +225,11 @@
             </objects>
             <point key="canvasLocation" x="2400.8000000000002" y="801.94902548725645"/>
         </scene>
-        <!--Item-->
+        <!--Commit-->
         <scene sceneID="M7K-9j-35T">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gu5-Ic-vUL" customClass="NavigationViewController" customModule="GitStudy" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="gZp-rW-IAt"/>
+                    <tabBarItem key="tabBarItem" title="Commit" id="gZp-rW-IAt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Mc-70-cgY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
