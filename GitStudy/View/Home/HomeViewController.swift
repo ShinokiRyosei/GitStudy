@@ -67,7 +67,9 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 
 extension HomeViewController: UICollectionViewDelegate {
-    
+    private func toSegue() {
+        self.performSegue(withIdentifier: "toDetail", sender: nil)
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
