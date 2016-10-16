@@ -155,7 +155,7 @@
                                     <constraint firstAttribute="width" secondItem="Ah9-Ty-2AG" secondAttribute="height" multiplier="16:9" id="MvT-Ob-J5r"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WaU-dh-lp0">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WaU-dh-lp0">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="157" id="4ej-TN-aBJ"/>
