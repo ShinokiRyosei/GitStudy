@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11521.1" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -26,6 +26,9 @@
                 <constraint firstItem="S4o-dR-wuT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="h2j-qh-aXC"/>
                 <constraint firstAttribute="trailing" secondItem="S4o-dR-wuT" secondAttribute="trailing" id="tCq-IK-QiQ"/>
             </constraints>
+            <connections>
+                <outlet property="view" destination="S4o-dR-wuT" id="Q5b-iM-fx2"/>
+            </connections>
         </collectionViewCell>
     </objects>
 </document>
