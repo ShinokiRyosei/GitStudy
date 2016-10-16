@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3993E2DA1DB2826D00DF922B /* IoniconsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3993E2D71DB2826D00DF922B /* IoniconsKit.framework */; };
+		3993E2DB1DB2826D00DF922B /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3993E2D81DB2826D00DF922B /* Realm.framework */; };
+		3993E2DC1DB2826D00DF922B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3993E2D91DB2826D00DF922B /* RealmSwift.framework */; };
+		3993E2DF1DB2878400DF922B /* CommitNumber_Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3993E2DE1DB2878400DF922B /* CommitNumber_Commit.swift */; };
+		3993E2E11DB2927E00DF922B /* JEToolkit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3993E2E01DB2927E00DF922B /* JEToolkit.framework */; };
 		39979BB71DAA209C006A37DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BB61DAA209C006A37DC /* AppDelegate.swift */; };
 		39979BB91DAA209C006A37DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BB81DAA209C006A37DC /* ViewController.swift */; };
 		39979BBC1DAA209C006A37DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39979BBA1DAA209C006A37DC /* Main.storyboard */; };
@@ -24,13 +29,7 @@
 		39979BEC1DAA20F5006A37DC /* CommitRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BDE1DAA20F5006A37DC /* CommitRootViewController.swift */; };
 		39979BED1DAA20F5006A37DC /* CommitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BE01DAA20F5006A37DC /* CommitViewController.swift */; };
 		39979BEE1DAA20F5006A37DC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BE21DAA20F5006A37DC /* HomeViewController.swift */; };
-		39979BF41DAA2287006A37DC /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39979BF01DAA2287006A37DC /* Realm.framework */; };
-		39979BF51DAA2287006A37DC /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39979BF01DAA2287006A37DC /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		39979BF61DAA2287006A37DC /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39979BF11DAA2287006A37DC /* RealmSwift.framework */; };
-		39979BF71DAA2287006A37DC /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39979BF11DAA2287006A37DC /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		39A1F0E31DAA2AA800AE0EE2 /* CommitNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1F0E21DAA2AA800AE0EE2 /* CommitNumber.swift */; };
-		39A1F0E51DAA346D00AE0EE2 /* IoniconsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A1F0E41DAA346D00AE0EE2 /* IoniconsKit.framework */; };
-		39A1F0E61DAA346D00AE0EE2 /* IoniconsKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39A1F0E41DAA346D00AE0EE2 /* IoniconsKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,9 +39,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				39979BF51DAA2287006A37DC /* Realm.framework in Embed Frameworks */,
-				39A1F0E61DAA346D00AE0EE2 /* IoniconsKit.framework in Embed Frameworks */,
-				39979BF71DAA2287006A37DC /* RealmSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,6 +46,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3993E2D71DB2826D00DF922B /* IoniconsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IoniconsKit.framework; path = Carthage/Build/iOS/IoniconsKit.framework; sourceTree = "<group>"; };
+		3993E2D81DB2826D00DF922B /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		3993E2D91DB2826D00DF922B /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		3993E2DE1DB2878400DF922B /* CommitNumber_Commit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommitNumber_Commit.swift; path = "Commit-CommitNumber/CommitNumber_Commit.swift"; sourceTree = "<group>"; };
+		3993E2E01DB2927E00DF922B /* JEToolkit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JEToolkit.framework; path = Carthage/Build/iOS/JEToolkit.framework; sourceTree = "<group>"; };
 		39979BB31DAA209C006A37DC /* GitStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39979BB61DAA209C006A37DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39979BB81DAA209C006A37DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,10 +70,7 @@
 		39979BDE1DAA20F5006A37DC /* CommitRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitRootViewController.swift; sourceTree = "<group>"; };
 		39979BE01DAA20F5006A37DC /* CommitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitViewController.swift; sourceTree = "<group>"; };
 		39979BE21DAA20F5006A37DC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		39979BF01DAA2287006A37DC /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
-		39979BF11DAA2287006A37DC /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		39A1F0E21DAA2AA800AE0EE2 /* CommitNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitNumber.swift; sourceTree = "<group>"; };
-		39A1F0E41DAA346D00AE0EE2 /* IoniconsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IoniconsKit.framework; path = Carthage/Build/iOS/IoniconsKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,23 +78,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39979BF41DAA2287006A37DC /* Realm.framework in Frameworks */,
-				39A1F0E51DAA346D00AE0EE2 /* IoniconsKit.framework in Frameworks */,
-				39979BF61DAA2287006A37DC /* RealmSwift.framework in Frameworks */,
+				3993E2E11DB2927E00DF922B /* JEToolkit.framework in Frameworks */,
+				3993E2DA1DB2826D00DF922B /* IoniconsKit.framework in Frameworks */,
+				3993E2DB1DB2826D00DF922B /* Realm.framework in Frameworks */,
+				3993E2DC1DB2826D00DF922B /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3993E2D51DB2810F00DF922B /* Join */ = {
+			isa = PBXGroup;
+			children = (
+				3993E2DE1DB2878400DF922B /* CommitNumber_Commit.swift */,
+			);
+			name = Join;
+			sourceTree = "<group>";
+		};
+		3993E2D61DB2826C00DF922B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3993E2E01DB2927E00DF922B /* JEToolkit.framework */,
+				3993E2D71DB2826D00DF922B /* IoniconsKit.framework */,
+				3993E2D81DB2826D00DF922B /* Realm.framework */,
+				3993E2D91DB2826D00DF922B /* RealmSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		39979BAA1DAA209C006A37DC = {
 			isa = PBXGroup;
 			children = (
-				39A1F0E41DAA346D00AE0EE2 /* IoniconsKit.framework */,
-				39979BF01DAA2287006A37DC /* Realm.framework */,
-				39979BF11DAA2287006A37DC /* RealmSwift.framework */,
 				39979BB51DAA209C006A37DC /* GitStudy */,
 				39979BB41DAA209C006A37DC /* Products */,
+				3993E2D61DB2826C00DF922B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,6 +187,7 @@
 			children = (
 				39979BD11DAA20F5006A37DC /* Commit */,
 				39979BD31DAA20F5006A37DC /* CommitNumber */,
+				3993E2D51DB2810F00DF922B /* Join */,
 				39979BD41DAA20F5006A37DC /* Subjects.swift */,
 			);
 			path = Model;
@@ -265,6 +282,7 @@
 				39979BB01DAA209C006A37DC /* Frameworks */,
 				39979BB11DAA209C006A37DC /* Resources */,
 				39979BF81DAA2287006A37DC /* Embed Frameworks */,
+				3993E2DD1DB282B100DF922B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -326,6 +344,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3993E2DD1DB282B100DF922B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/IoniconsKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/JEToolkit.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		39979BAF1DAA209C006A37DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -341,6 +379,7 @@
 				39979BB91DAA209C006A37DC /* ViewController.swift in Sources */,
 				39979BE51DAA20F5006A37DC /* UIImageExtension.swift in Sources */,
 				39979BB71DAA209C006A37DC /* AppDelegate.swift in Sources */,
+				3993E2DF1DB2878400DF922B /* CommitNumber_Commit.swift in Sources */,
 				39979BEA1DAA20F5006A37DC /* HomeViewCell.swift in Sources */,
 				39979BED1DAA20F5006A37DC /* CommitViewController.swift in Sources */,
 				39979BEE1DAA20F5006A37DC /* HomeViewController.swift in Sources */,
