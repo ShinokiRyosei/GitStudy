@@ -37,6 +37,11 @@ class CommitNumber: Object {
         return num
     }
     
+    static func fetch(with id: Int) -> CommitNumber? {
+        let object = CommitNumber.realm.objects(CommitNumber.self).filter("id == %d", id).first
+        return object
+    }
+    
     static func fetch() -> [CommitNumber]{
         let objects = realm.objects(CommitNumber.self).sorted(byProperty: "createdAt", ascending: false)
         var arr: [CommitNumber] = []
