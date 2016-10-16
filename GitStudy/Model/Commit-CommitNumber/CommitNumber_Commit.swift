@@ -28,6 +28,16 @@ class CommitNumber_Commit: Object {
         return join
     }
     
+    static func fetch(with model: CommitNumber) -> [CommitNumber_Commit]? {
+        let predicate: NSPredicate = NSPredicate(format: "commitNumber == %@", model)
+        let fetchObjects = CommitNumber_Commit.realm.objects(CommitNumber_Commit.self).filter(predicate)
+        var objects: [CommitNumber_Commit] = []
+        for i in fetchObjects {
+            objects.append(i)
+        }
+        return objects
+    }
+    
     static func lastId() -> Int {
         if let join = realm.objects(CommitNumber_Commit.self).sorted(byProperty: "id", ascending: false).first {
             return join.id + 1
