@@ -11,6 +11,8 @@ import JEToolkit
 
 class CommitDetailViewController: UIViewController {
     
+    var id: Int!
+    
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
             tableView.delegate = self

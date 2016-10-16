@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
         let now = Date()
         var arr: [[String: Int]] = []
         for i in numbers {
-            let dict: [String: Int] = ["day": i.createdAt.past(to: now), "contributions": i.contributions]
+            let dict: [String: Int] = ["day": i.createdAt.past(to: now), "contributions": i.contributions, "id": i.id]
             arr.append(dict)
         }
         return arr
@@ -57,18 +57,31 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(with: HomeViewCell.self, for: indexPath) as! HomeViewCell
-        if let contribution: [String: Int] = contributions.filter({ $0["contributions"]! == indexPath.row }).first {
+        if let contribution: [String: Int] = contributions.filter({ $0["day"]! == indexPath.row }).first {
             cell.applyColor(of: true)
         }else {
             cell.applyColor()
         }
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetail" {
+            let destination = segue.destination as! CommitDetailViewController
+            destination.id = sender as! Int
+        }
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegate {
-    private func toSegue() {
-        self.performSegue(withIdentifier: "toDetail", sender: nil)
+    private func toSegue(sender: Any?) {
+        self.performSegue(withIdentifier: "toDetail", sender: sender)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let contribution: [String: Int] = contributions.filter({ $0["day"]! == indexPath.row }).first {
+            self.toSegue(sender: contribution["id"])
+        }
     }
 }
 

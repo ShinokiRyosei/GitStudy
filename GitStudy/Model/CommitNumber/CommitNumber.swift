@@ -13,7 +13,7 @@ class CommitNumber: Object {
     
     static let realm = try! Realm()
     
-    dynamic private var id: Int = 0
+    dynamic var id: Int = 0
     dynamic var contributions: Int = 0
     dynamic var createdAt: Date!
     
