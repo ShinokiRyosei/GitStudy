@@ -31,14 +31,17 @@ class CommitViewController: UIViewController {
         super.viewDidLoad()
         self.setCommitBtn()
         self.setup()
+        self.configureTextView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         textView.becomeFirstResponder()
+        image = image?.resize()
+        imageView.image = image
     }
     
-    func setup() {
+    private func setup() {
         pickerView = UIPickerView()
         toolBar = UIToolbar(frame: CGRect(x: 0, y: self.view.frame.size.height/6, width: self.view.frame.size.width, height: 40.0))
         toolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
@@ -55,6 +58,33 @@ class CommitViewController: UIViewController {
         textField.text = subject.string()
     }
     
+    private func configureTextView() {
+        // 仮のサイズでツールバー生成
+        let kbToolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 40))
+        kbToolBar.barStyle = UIBarStyle.default  // スタイルを設定
+        kbToolBar.sizeToFit()  // 画面幅に合わせてサイズを変更
+        // スペーサー
+        let spacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)
+        // 閉じるボタン
+        let commitButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(self.textViewDone))
+        kbToolBar.items = [spacer, commitButton]
+        textView.inputAccessoryView = kbToolBar
+    }
+    
+    @objc private func textViewDone() {
+        textView.resignFirstResponder()
+    }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if textView.isFirstResponder {
+            textView.resignFirstResponder()
+        }
+        if textField.isFirstResponder {
+            textField.resignFirstResponder()
+        }
+    }
+    
     func setCommitBtn() {
         let leftBtn: UIBarButtonItem = UIBarButtonItem(title: "Commit", style: .done, target: self, action: #selector(self.commit))
         self.navigationItem.rightBarButtonItem = leftBtn
@@ -65,20 +95,23 @@ class CommitViewController: UIViewController {
         guard let img: UIImage = image else {
             return
         }
-        Commit.create(message: textView.text, image: img, createdAt: now, subject: subject.hashValue)?.save()
-        CommitNumber.hasContributions(createdAt: now.day())?.create(createdAt: now.day())
+        let commit = Commit.create(message: textView.text, image: img, createdAt: now, subject: subject.hashValue)
+        commit?.save()
+        if let commitNumber: CommitNumber = CommitNumber.hasContributions(createdAt: now.day()) {
+            commitNumber.update()
+            CommitNumber_Commit.create(withCommit: commit!, withCommitNumber: commitNumber).save()
+        }else {
+            let commitNumber = CommitNumber.save(createdAt: now.day())
+            CommitNumber_Commit.create(withCommit: commit!, withCommitNumber: commitNumber).save()
+        }
     }
     
-    func close() {
+    @objc private func close() {
         textField.resignFirstResponder()
     }
 }
 
 extension CommitViewController: UITextViewDelegate {
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        textView.resignFirstResponder()
-    }
     
     func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
         textView.resignFirstResponder()
