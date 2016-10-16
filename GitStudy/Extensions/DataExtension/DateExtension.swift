@@ -10,8 +10,10 @@ import Foundation
 import UIKit
 
 extension Date {
-    func format() -> String {
-        return ""
+    func formatDate() -> String {
+        let formatter: DateFormatter = DateFormatter()
+        formatter.dateFormat = "hh:mm:ss"
+        return formatter.string(from: self)
     }
     
     func day() -> Date {
