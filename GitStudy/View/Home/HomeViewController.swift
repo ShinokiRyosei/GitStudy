@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
         let now = Date()
         var arr: [[String: Int]] = []
         for i in numbers {
-            let dict: [String: Int] = ["day": i.createdAt.past(to: now), "contributions": i.contributions, "id": i.id]
+            let dict: [String: Int] = ["day": i.createdAt.past(to: now), "contributions": i.contributions, "model": i.id]
             arr.append(dict)
         }
         return arr
@@ -68,7 +68,7 @@ extension HomeViewController: UICollectionViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetail" {
             let destination = segue.destination as! CommitDetailViewController
-            destination.id = sender as! Int
+            destination.model = sender as! CommitNumber
         }
     }
 }
@@ -80,7 +80,8 @@ extension HomeViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let contribution: [String: Int] = contributions.filter({ $0["day"]! == indexPath.row }).first {
-            self.toSegue(sender: contribution["id"])
+            let model = CommitNumber.fetch(with: contribution["model"]!)
+            self.toSegue(sender: model)
         }
     }
 }
