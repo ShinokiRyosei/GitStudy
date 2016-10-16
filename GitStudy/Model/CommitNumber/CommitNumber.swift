@@ -51,12 +51,11 @@ class CommitNumber: Object {
         return arr
     }
     
-    static func countMax() -> Int {
+    static func countMax() -> Int? {
         if let commitNumber = CommitNumber.realm.objects(CommitNumber.self).sorted(byProperty: "contributions", ascending: false).first {
             return commitNumber.contributions
-        }else {
-            return 0
         }
+        return nil
     }
     
     func update() {
