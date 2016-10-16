@@ -25,23 +25,25 @@ class CommitNumber: Object {
         }
     }
     
-    func create(createdAt: Date) {
-        if let `self`: CommitNumber = self {
-            self.update()
-        }else {
-            self.save(createdAt: createdAt)
-        }
-    }
     
-    
-    func save(createdAt: Date) {
+    static func save(createdAt: Date) -> CommitNumber{
         let num = CommitNumber()
-        num.id = self.lastId()
+        num.id = num.lastId()
         num.createdAt = createdAt
         num.contributions = 1
         try! CommitNumber.realm.write {
             CommitNumber.realm.add(num)
         }
+        return num
+    }
+    
+    static func fetch() -> [CommitNumber]{
+        let objects = realm.objects(CommitNumber.self).sorted(byProperty: "createdAt", ascending: false)
+        var arr: [CommitNumber] = []
+        for i in objects {
+            arr.append(i)
+        }
+        return arr
     }
     
     func update() {
