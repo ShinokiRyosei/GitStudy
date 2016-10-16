@@ -11,7 +11,9 @@ import JEToolkit
 
 class CommitDetailViewController: UIViewController {
     
-    var id: Int!
+    var model: CommitNumber!
+    
+    fileprivate var models: [CommitNumber_Commit]?
     
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
@@ -23,7 +25,17 @@ class CommitDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        models = self.fetch(with: model)
+        tableView.reloadData()
+    }
+    
+    private func fetch(with model: CommitNumber) -> [CommitNumber_Commit]? {
+        let objects: [CommitNumber_Commit]? = CommitNumber_Commit.fetch(with: model)
+        return objects
     }
 }
 
@@ -38,10 +50,11 @@ extension CommitDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(with: CommitDetailTableViewCell.self, for: indexPath) as! CommitDetailTableViewCell
+        cell.applyModel(of: (models?[indexPath.row].commit)!)
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return models?.count ?? 0
     }
 }
