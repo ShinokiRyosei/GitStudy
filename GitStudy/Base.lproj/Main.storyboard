@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cuB-JY-2R9">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cuB-JY-2R9">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7D5-lc-tia">
                                     <size key="itemSize" width="50" height="50"/>
@@ -61,14 +61,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aQ6-0D-uAp">
+                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aQ6-0D-uAp">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aQ6-0D-uAp" firstAttribute="leading" secondItem="z8h-MA-2zx" secondAttribute="leading" id="0Ls-6y-uz4"/>
-                            <constraint firstItem="aQ6-0D-uAp" firstAttribute="top" secondItem="NrE-oQ-quq" secondAttribute="bottom" id="O65-59-igt"/>
+                            <constraint firstItem="aQ6-0D-uAp" firstAttribute="top" secondItem="NrE-oQ-quq" secondAttribute="bottom" constant="-64" id="O65-59-igt"/>
                             <constraint firstAttribute="trailing" secondItem="aQ6-0D-uAp" secondAttribute="trailing" id="bef-Mi-RYG"/>
                             <constraint firstItem="pas-eU-EHm" firstAttribute="top" secondItem="aQ6-0D-uAp" secondAttribute="bottom" id="qcV-b9-EeX"/>
                         </constraints>
