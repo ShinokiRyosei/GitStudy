@@ -19,6 +19,8 @@ class CommitDetailViewController: UIViewController {
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
+            tableView.estimatedRowHeight = 82
+            tableView.tableFooterView = UIView()
             tableView.registerCellClass(CommitDetailTableViewCell.self)
         }
     }
