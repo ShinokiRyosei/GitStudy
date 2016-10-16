@@ -42,7 +42,7 @@
                     <navigationItem key="navigationItem" id="gfn-92-0vf"/>
                     <connections>
                         <outlet property="collectionView" destination="cuB-JY-2R9" id="q30-eg-w4L"/>
-                        <segue destination="YGf-ES-f4Q" kind="show" id="9eA-0T-LhI"/>
+                        <segue destination="YGf-ES-f4Q" kind="show" identifier="toDetail" id="9eA-0T-LhI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qoh-NO-u0H" sceneMemberID="firstResponder"/>
@@ -60,12 +60,26 @@
                     <view key="view" contentMode="scaleToFill" id="z8h-MA-2zx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aQ6-0D-uAp">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aQ6-0D-uAp" firstAttribute="leading" secondItem="z8h-MA-2zx" secondAttribute="leading" id="0Ls-6y-uz4"/>
+                            <constraint firstItem="aQ6-0D-uAp" firstAttribute="top" secondItem="NrE-oQ-quq" secondAttribute="bottom" id="O65-59-igt"/>
+                            <constraint firstAttribute="trailing" secondItem="aQ6-0D-uAp" secondAttribute="trailing" id="bef-Mi-RYG"/>
+                            <constraint firstItem="pas-eU-EHm" firstAttribute="top" secondItem="aQ6-0D-uAp" secondAttribute="bottom" id="qcV-b9-EeX"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="aQ6-0D-uAp" id="nJ4-Lm-gtb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DHs-vY-irg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2762" y="124"/>
+            <point key="canvasLocation" x="2760.8000000000002" y="123.68815592203899"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6qF-NQ-Rnx">
