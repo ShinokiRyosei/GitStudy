@@ -17,7 +17,7 @@ class CommitNumber: Object {
     dynamic var contributions: Int = 0
     dynamic var createdAt: Date!
     
-    static func hasContributions(createdAt: Date) -> CommitNumber?{
+    static func hasContributions(at createdAt: Date) -> CommitNumber?{
         if let num = realm.objects(CommitNumber.self).filter("createdAt == %@", createdAt).first {
             return num
         }else {
