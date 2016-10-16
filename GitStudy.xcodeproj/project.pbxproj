@@ -13,7 +13,6 @@
 		3993E2DF1DB2878400DF922B /* CommitNumber_Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3993E2DE1DB2878400DF922B /* CommitNumber_Commit.swift */; };
 		3993E2E11DB2927E00DF922B /* JEToolkit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3993E2E01DB2927E00DF922B /* JEToolkit.framework */; };
 		39979BB71DAA209C006A37DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BB61DAA209C006A37DC /* AppDelegate.swift */; };
-		39979BB91DAA209C006A37DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BB81DAA209C006A37DC /* ViewController.swift */; };
 		39979BBC1DAA209C006A37DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39979BBA1DAA209C006A37DC /* Main.storyboard */; };
 		39979BBE1DAA209C006A37DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39979BBD1DAA209C006A37DC /* Assets.xcassets */; };
 		39979BC11DAA209C006A37DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39979BBF1DAA209C006A37DC /* LaunchScreen.storyboard */; };
@@ -56,7 +55,6 @@
 		3993E2E01DB2927E00DF922B /* JEToolkit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JEToolkit.framework; path = Carthage/Build/iOS/JEToolkit.framework; sourceTree = "<group>"; };
 		39979BB31DAA209C006A37DC /* GitStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39979BB61DAA209C006A37DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		39979BB81DAA209C006A37DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		39979BBB1DAA209C006A37DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		39979BBD1DAA209C006A37DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39979BC01DAA209C006A37DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -138,7 +136,6 @@
 				39979BD01DAA20F5006A37DC /* Model */,
 				39979BD51DAA20F5006A37DC /* View */,
 				39979BB61DAA209C006A37DC /* AppDelegate.swift */,
-				39979BB81DAA209C006A37DC /* ViewController.swift */,
 				39979BC21DAA209C006A37DC /* Info.plist */,
 			);
 			path = GitStudy;
@@ -402,7 +399,6 @@
 				39979BE81DAA20F5006A37DC /* CommitRootViewCell.swift in Sources */,
 				39979BE41DAA20F5006A37DC /* DateExtension.swift in Sources */,
 				39979BEC1DAA20F5006A37DC /* CommitRootViewController.swift in Sources */,
-				39979BB91DAA209C006A37DC /* ViewController.swift in Sources */,
 				39979BE51DAA20F5006A37DC /* UIImageExtension.swift in Sources */,
 				39A7787E1DB3896E0047DDB1 /* CommitDetailTableViewCell.swift in Sources */,
 				39A7787A1DB388200047DDB1 /* CommitDetailViewController.swift in Sources */,
