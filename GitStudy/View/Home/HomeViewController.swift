@@ -34,6 +34,10 @@ class HomeViewController: UIViewController {
         collectionView.reloadData()
     }
     
+    private func setNavBar() {
+        self.navigationController?.title = "GitStudy"
+    }
+    
     private func parse(numbers: [CommitNumber]) -> [[String: Int]] {
         let now = Date()
         var arr: [[String: Int]] = []

@@ -27,12 +27,17 @@ class CommitDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setNavBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         models = self.fetch(with: model)
         tableView.reloadData()
+    }
+    
+    private func setNavBar() {
+        self.navigationController?.title = "Commit Detail"
     }
     
     private func fetch(with model: CommitNumber) -> [CommitNumber_Commit]? {

@@ -32,6 +32,7 @@ class CommitViewController: UIViewController {
         self.setCommitBtn()
         self.setup()
         self.configureTextView()
+        self.setNavbar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +40,10 @@ class CommitViewController: UIViewController {
         textView.becomeFirstResponder()
         image = image?.resize()
         imageView.image = image
+    }
+    
+    private func setNavbar() {
+        self.navigationController?.title = "Commit"
     }
     
     private func setup() {
@@ -85,12 +90,12 @@ class CommitViewController: UIViewController {
         }
     }
     
-    func setCommitBtn() {
+    private func setCommitBtn() {
         let leftBtn: UIBarButtonItem = UIBarButtonItem(title: "Commit", style: .done, target: self, action: #selector(self.commit))
         self.navigationItem.rightBarButtonItem = leftBtn
     }
     
-    func commit() {
+    @objc private func commit() {
         let now = Date()
         guard let img: UIImage = image else {
             return
