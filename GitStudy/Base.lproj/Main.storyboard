@@ -42,11 +42,30 @@
                     <navigationItem key="navigationItem" id="gfn-92-0vf"/>
                     <connections>
                         <outlet property="collectionView" destination="cuB-JY-2R9" id="q30-eg-w4L"/>
+                        <segue destination="YGf-ES-f4Q" kind="show" id="9eA-0T-LhI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qoh-NO-u0H" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1996" y="123.68815592203899"/>
+        </scene>
+        <!--Commit Detail View Controller-->
+        <scene sceneID="wcz-za-6O7">
+            <objects>
+                <viewController id="YGf-ES-f4Q" customClass="CommitDetailViewController" customModule="GitStudy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NrE-oQ-quq"/>
+                        <viewControllerLayoutGuide type="bottom" id="pas-eU-EHm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z8h-MA-2zx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DHs-vY-irg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2762" y="124"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6qF-NQ-Rnx">

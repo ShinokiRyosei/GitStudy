@@ -30,6 +30,7 @@
 		39979BED1DAA20F5006A37DC /* CommitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BE01DAA20F5006A37DC /* CommitViewController.swift */; };
 		39979BEE1DAA20F5006A37DC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BE21DAA20F5006A37DC /* HomeViewController.swift */; };
 		39A1F0E31DAA2AA800AE0EE2 /* CommitNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1F0E21DAA2AA800AE0EE2 /* CommitNumber.swift */; };
+		39A7787A1DB388200047DDB1 /* CommitDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A778791DB388200047DDB1 /* CommitDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,6 +72,7 @@
 		39979BE01DAA20F5006A37DC /* CommitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitViewController.swift; sourceTree = "<group>"; };
 		39979BE21DAA20F5006A37DC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		39A1F0E21DAA2AA800AE0EE2 /* CommitNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitNumber.swift; sourceTree = "<group>"; };
+		39A778791DB388200047DDB1 /* CommitDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommitDetailViewController.swift; path = Detail/CommitDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,9 +268,18 @@
 		39979BE11DAA20F5006A37DC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				39A7787B1DB388240047DDB1 /* Detail */,
 				39979BE21DAA20F5006A37DC /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		39A7787B1DB388240047DDB1 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				39A778791DB388200047DDB1 /* CommitDetailViewController.swift */,
+			);
+			name = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,6 +389,7 @@
 				39979BEC1DAA20F5006A37DC /* CommitRootViewController.swift in Sources */,
 				39979BB91DAA209C006A37DC /* ViewController.swift in Sources */,
 				39979BE51DAA20F5006A37DC /* UIImageExtension.swift in Sources */,
+				39A7787A1DB388200047DDB1 /* CommitDetailViewController.swift in Sources */,
 				39979BB71DAA209C006A37DC /* AppDelegate.swift in Sources */,
 				3993E2DF1DB2878400DF922B /* CommitNumber_Commit.swift in Sources */,
 				39979BEA1DAA20F5006A37DC /* HomeViewCell.swift in Sources */,
