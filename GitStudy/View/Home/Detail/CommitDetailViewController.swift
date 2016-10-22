@@ -15,6 +15,8 @@ class CommitDetailViewController: UIViewController {
     
     fileprivate var models: [CommitNumber_Commit]?
     
+    fileprivate var detailIndexPath: IndexPath?
+    
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
             tableView.delegate = self
@@ -25,7 +27,7 @@ class CommitDetailViewController: UIViewController {
             tableView.registerCellClass(CommitLargeTableViewCell.self)
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNavBar()
@@ -50,6 +52,10 @@ class CommitDetailViewController: UIViewController {
 
 extension CommitDetailViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        detailIndexPath = indexPath
+        tableView.reloadData()
+    }
 }
 
 extension CommitDetailViewController: UITableViewDataSource {
@@ -58,9 +64,18 @@ extension CommitDetailViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(with: CommitDetailTableViewCell.self, for: indexPath) as! CommitDetailTableViewCell
-        cell.applyModel(of: (models?[indexPath.row].commit)!)
-        return cell
+        guard let model: Commit = models?[indexPath.row].commit else {
+            return UITableViewCell()
+        }
+        if indexPath == detailIndexPath {
+            let cell = tableView.dequeueReusableCell(with: CommitLargeTableViewCell.self, for: indexPath) as! CommitLargeTableViewCell
+            cell.applyModel(with: model)
+            return cell
+        }else {
+            let cell = tableView.dequeueReusableCell(with: CommitDetailTableViewCell.self, for: indexPath) as! CommitDetailTableViewCell
+            cell.applyModel(of: model)
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
