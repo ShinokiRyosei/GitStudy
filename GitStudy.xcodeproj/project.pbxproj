@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3993E2DA1DB2826D00DF922B /* IoniconsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3993E2D71DB2826D00DF922B /* IoniconsKit.framework */; };
 		3993E2DB1DB2826D00DF922B /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3993E2D81DB2826D00DF922B /* Realm.framework */; };
 		3993E2DC1DB2826D00DF922B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3993E2D91DB2826D00DF922B /* RealmSwift.framework */; };
 		3993E2DF1DB2878400DF922B /* CommitNumber_Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3993E2DE1DB2878400DF922B /* CommitNumber_Commit.swift */; };
@@ -34,6 +33,8 @@
 		39A7787F1DB3896E0047DDB1 /* CommitDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39A7787D1DB3896E0047DDB1 /* CommitDetailTableViewCell.xib */; };
 		39A778821DB3BC990047DDB1 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A778811DB3BC990047DDB1 /* NavigationViewController.swift */; };
 		39A778841DB3BD0E0047DDB1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A778831DB3BD0E0047DDB1 /* TabBarController.swift */; };
+		39E8FD741DBB269300CB357D /* CommitLargeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E8FD721DBB269300CB357D /* CommitLargeTableViewCell.swift */; };
+		39E8FD751DBB269300CB357D /* CommitLargeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39E8FD731DBB269300CB357D /* CommitLargeTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,6 +80,9 @@
 		39A7787D1DB3896E0047DDB1 /* CommitDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommitDetailTableViewCell.xib; path = CommitDetail/CommitDetailTableViewCell.xib; sourceTree = "<group>"; };
 		39A778811DB3BC990047DDB1 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		39A778831DB3BD0E0047DDB1 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		39A778851DB3E6CA0047DDB1 /* FontAwesome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome.framework; path = Carthage/Build/iOS/FontAwesome.framework; sourceTree = "<group>"; };
+		39E8FD721DBB269300CB357D /* CommitLargeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommitLargeTableViewCell.swift; path = CommitLarge/CommitLargeTableViewCell.swift; sourceTree = "<group>"; };
+		39E8FD731DBB269300CB357D /* CommitLargeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommitLargeTableViewCell.xib; path = CommitLarge/CommitLargeTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +91,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3993E2E11DB2927E00DF922B /* JEToolkit.framework in Frameworks */,
-				3993E2DA1DB2826D00DF922B /* IoniconsKit.framework in Frameworks */,
 				3993E2DB1DB2826D00DF922B /* Realm.framework in Frameworks */,
 				3993E2DC1DB2826D00DF922B /* RealmSwift.framework in Frameworks */,
 			);
@@ -107,6 +110,7 @@
 		3993E2D61DB2826C00DF922B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				39A778851DB3E6CA0047DDB1 /* FontAwesome.framework */,
 				3993E2E01DB2927E00DF922B /* JEToolkit.framework */,
 				3993E2D71DB2826D00DF922B /* IoniconsKit.framework */,
 				3993E2D81DB2826D00DF922B /* Realm.framework */,
@@ -234,6 +238,7 @@
 				39979BD71DAA20F5006A37DC /* CommitRootViewCell */,
 				39979BDA1DAA20F5006A37DC /* HomeViewCell */,
 				39A778801DB389740047DDB1 /* CommitDetail */,
+				39E8FD761DBB269800CB357D /* CommitLarge */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -297,6 +302,15 @@
 				39A7787D1DB3896E0047DDB1 /* CommitDetailTableViewCell.xib */,
 			);
 			name = CommitDetail;
+			sourceTree = "<group>";
+		};
+		39E8FD761DBB269800CB357D /* CommitLarge */ = {
+			isa = PBXGroup;
+			children = (
+				39E8FD721DBB269300CB357D /* CommitLargeTableViewCell.swift */,
+				39E8FD731DBB269300CB357D /* CommitLargeTableViewCell.xib */,
+			);
+			name = CommitLarge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,6 +378,7 @@
 			files = (
 				39979BC11DAA209C006A37DC /* LaunchScreen.storyboard in Resources */,
 				39A7787F1DB3896E0047DDB1 /* CommitDetailTableViewCell.xib in Resources */,
+				39E8FD751DBB269300CB357D /* CommitLargeTableViewCell.xib in Resources */,
 				39979BBE1DAA209C006A37DC /* Assets.xcassets in Resources */,
 				39979BBC1DAA209C006A37DC /* Main.storyboard in Resources */,
 				39979BEB1DAA20F5006A37DC /* HomeViewCell.xib in Resources */,
@@ -382,7 +397,6 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/IoniconsKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/JEToolkit.framework",
 			);
 			outputPaths = (
@@ -414,6 +428,7 @@
 				3993E2DF1DB2878400DF922B /* CommitNumber_Commit.swift in Sources */,
 				39979BEA1DAA20F5006A37DC /* HomeViewCell.swift in Sources */,
 				39979BED1DAA20F5006A37DC /* CommitViewController.swift in Sources */,
+				39E8FD741DBB269300CB357D /* CommitLargeTableViewCell.swift in Sources */,
 				39979BEE1DAA20F5006A37DC /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
