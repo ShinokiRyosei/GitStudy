@@ -8,7 +8,6 @@
 
 import UIKit
 import Photos
-import IoniconsKit
 import JEToolkit
 
 class CommitRootViewController: UIViewController {
@@ -66,9 +65,6 @@ class CommitRootViewController: UIViewController {
     }
     
     private func setDoneBtn() {
-        let rightBtn: UIBarButtonItem = UIBarButtonItem(title: String.ionicon(with: .androidCheckbox), style: .done, target: self, action: #selector(self.done))
-        
-        self.navigationItem.rightBarButtonItem = rightBtn
     }
     
     @objc private func done() {
