@@ -146,22 +146,32 @@
                                     <constraint firstAttribute="width" secondItem="kLw-eC-GcV" secondAttribute="height" multiplier="16:9" id="hBF-YP-TLw"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="scW-wf-yto" customClass="TwicketSegmentedControl" customModule="TwicketSegmentedControl">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="mqM-ke-qgc"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="scW-wf-yto" firstAttribute="leading" secondItem="9ud-fJ-T30" secondAttribute="leading" id="2ET-CV-X4i"/>
+                            <constraint firstItem="kLw-eC-GcV" firstAttribute="top" secondItem="scW-wf-yto" secondAttribute="bottom" constant="8" id="FkL-lo-q8k"/>
                             <constraint firstItem="Fsb-m9-pWB" firstAttribute="leading" secondItem="9ud-fJ-T30" secondAttribute="leading" id="IIH-fh-d8Y"/>
                             <constraint firstItem="kLw-eC-GcV" firstAttribute="leading" secondItem="9ud-fJ-T30" secondAttribute="leading" id="anx-9z-P6a"/>
                             <constraint firstAttribute="trailing" secondItem="Fsb-m9-pWB" secondAttribute="trailing" id="bp9-ZU-K67"/>
                             <constraint firstAttribute="trailing" secondItem="kLw-eC-GcV" secondAttribute="trailing" id="fjY-Iu-eTe"/>
-                            <constraint firstItem="Fsb-m9-pWB" firstAttribute="top" secondItem="kLw-eC-GcV" secondAttribute="bottom" id="qMX-sX-aBc"/>
+                            <constraint firstItem="scW-wf-yto" firstAttribute="top" secondItem="1NV-p2-hu8" secondAttribute="bottom" id="gJO-4z-ORR"/>
+                            <constraint firstAttribute="trailing" secondItem="scW-wf-yto" secondAttribute="trailing" id="phL-96-V64"/>
+                            <constraint firstItem="Fsb-m9-pWB" firstAttribute="top" secondItem="kLw-eC-GcV" secondAttribute="bottom" constant="-44" id="qMX-sX-aBc"/>
                             <constraint firstItem="bR8-5d-Z4X" firstAttribute="top" secondItem="Fsb-m9-pWB" secondAttribute="bottom" id="szX-Os-spa"/>
-                            <constraint firstItem="kLw-eC-GcV" firstAttribute="top" secondItem="1NV-p2-hu8" secondAttribute="bottom" id="xvX-oD-tGA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qx9-HV-mta"/>
                     <connections>
                         <outlet property="collectionView" destination="Fsb-m9-pWB" id="5H1-HL-XRs"/>
                         <outlet property="imageView" destination="kLw-eC-GcV" id="JIV-he-Qam"/>
+                        <outlet property="segmentedControl" destination="scW-wf-yto" id="BLe-zR-DTI"/>
                         <segue destination="8xr-TW-2sb" kind="show" identifier="toCommitView" id="OA2-s7-F5T">
                             <nil key="action"/>
                         </segue>
