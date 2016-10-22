@@ -8,7 +8,6 @@
 
 import UIKit
 import Photos
-import IoniconsKit
 import JEToolkit
 
 class CommitRootViewController: UIViewController {
@@ -32,13 +31,18 @@ class CommitRootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setDoneBtn()
+        self.setNavBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.fetchAllImage()
     }
     
-    func fetchAllImage() {
+    private func setNavBar() {
+        self.navigationController?.title = "Commit"
+    }
+    
+    private func fetchAllImage() {
         PHAssetCollection.fetchMoments(with: nil).enumerateObjects(options: NSEnumerationOptions.concurrent) { (collection, _, _) in
             let assets = PHAsset.fetchAssets(in: collection, options: nil)
             assets.enumerateObjects(options: NSEnumerationOptions.concurrent, using: { (asset, index, stop) in
@@ -48,7 +52,7 @@ class CommitRootViewController: UIViewController {
         }
     }
     
-    func convertImage(with assets: PHAsset) {
+    private func convertImage(with assets: PHAsset) {
         let imageManager = PHCachingImageManager()
         let options = PHImageRequestOptions()
         options.deliveryMode = .fastFormat
@@ -60,13 +64,10 @@ class CommitRootViewController: UIViewController {
         self.imageView.image = images[0]
     }
     
-    func setDoneBtn() {
-        let rightBtn: UIBarButtonItem = UIBarButtonItem(title: String.ionicon(with: .androidCheckbox), style: .done, target: self, action: #selector(self.done))
-        
-        self.navigationItem.rightBarButtonItem = rightBtn
+    private func setDoneBtn() {
     }
     
-    func done() {
+    @objc private func done() {
         self.performSegue(withIdentifier: "toCommitView", sender: self.imageView.image)
     }
     

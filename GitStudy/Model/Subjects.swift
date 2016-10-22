@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Subjects {
+enum Subjects: Int {
     case other
     case math
     case langage

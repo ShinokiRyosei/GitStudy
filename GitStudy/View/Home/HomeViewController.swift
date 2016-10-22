@@ -22,9 +22,10 @@ class HomeViewController: UIViewController {
             collectionView.registerCellClass(HomeViewCell.self)
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setNavBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,6 +33,13 @@ class HomeViewController: UIViewController {
         numbers = CommitNumber.fetch()
         contributions = self.parse(numbers: numbers)
         collectionView.reloadData()
+    }
+    
+    private func setNavBar() {
+        self.title = "GitStudy"
+    }
+    
+    private func setTabBar() {
     }
     
     private func parse(numbers: [CommitNumber]) -> [[String: Int]] {
@@ -79,10 +87,9 @@ extension HomeViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let contribution: [String: Int] = contributions.filter({ $0["day"]! == indexPath.row }).first {
-            let model = CommitNumber.fetch(with: contribution["model"]!)
-            self.toSegue(sender: model)
-        }
+        guard let contribution: [String: Int] = contributions.filter({ $0["day"]! == indexPath.row }).first else { return }
+        let model = CommitNumber.fetch(with: contribution["model"]!)
+        self.toSegue(sender: model)
     }
 }
 
