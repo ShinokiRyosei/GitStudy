@@ -37,7 +37,8 @@ class CommitDetailViewController: UIViewController {
     }
     
     private func setNavBar() {
-        self.navigationController?.title = "Commit Detail"
+        self.title = "Commit Detail"
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteTheme
     }
     
     private func fetch(with model: CommitNumber) -> [CommitNumber_Commit]? {
