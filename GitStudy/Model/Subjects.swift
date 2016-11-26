@@ -8,28 +8,37 @@
 
 import Foundation
 
+
+// MARK: - Subjects
+
 enum Subjects: Int {
+    
     case other
     case math
     case langage
     case foreign
     
-    func count() -> Int {
+    internal func count() -> Int {
+        
         return 4
     }
     
-    func string(of num: Int) -> String {
+    internal func string(of num: Int) -> String {
+        
         let subjectNames: [String] = ["その他", "数学", "国語", "英語"]
         return subjectNames[num]
     }
     
     func string() -> String {
+        
         let subjectNames: [String] = ["その他", "数学", "国語", "英語"]
         return subjectNames[self.hashValue]
     }
     
     mutating func value(in num: Int) {
+        
         switch num {
+            
         case 0:
             self = .other
         case 1:
