@@ -8,42 +8,84 @@
 
 import UIKit
 import Photos
+import AVFoundation
+
 import JEToolkit
+import TwicketSegmentedControl
 
 class CommitRootViewController: UIViewController {
     
-    @IBOutlet var imageView: UIImageView!
+    @IBOutlet fileprivate weak var imageView: UIImageView!
+    @IBOutlet private weak var segmentedControl: TwicketSegmentedControl! {
+        didSet {
+            
+            segmentedControl.delegate = self
+            segmentedControl.setSegmentItems(Segment.titles())
+        }
+    }
     
-    let cellMargin: CGFloat = 2.0
-    
-    var photoAssets: PHAsset?
-    
-    var images: [UIImage] = []
+    fileprivate let cellMargin: CGFloat = 2.0
+    private var photoAssets: PHAsset?
+    fileprivate var images: [UIImage] = []
     
     @IBOutlet var collectionView: UICollectionView! {
         didSet {
+            
             collectionView.delegate = self
             collectionView.dataSource = self
             collectionView.registerCellClass(CommitRootViewCell.self)
         }
     }
     
+    @IBOutlet private var cameraOutputView: UIView!
+    @IBOutlet private var shutterButton: UIButton!
+    
+    private var input: AVCaptureDeviceInput!
+    private var output: AVCapturePhotoOutput!
+    private var session: AVCaptureSession!
+    private var camera: AVCaptureDevice!
+    
+    fileprivate var albumView: UIView?
+    fileprivate var cameraView: UIView?
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
         self.setDoneBtn()
         self.setNavBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         self.fetchAllImage()
+        
+    }
+    
+    override func loadView() {
+        self.albumView = UINib(nibName: "CommitRootAlbumView", bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView
+        self.cameraView = UINib(nibName: "CommitRootCameraView", bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView
+        
+        if let view: UIView = self.albumView {
+            self.view = view
+        }
+    }
+    
+    private func setupCamera() {
+        
+        session = AVCaptureSession()
+
     }
     
     private func setNavBar() {
+        
         self.navigationController?.title = "Commit"
     }
     
     private func fetchAllImage() {
+        
         PHAssetCollection.fetchMoments(with: nil).enumerateObjects(options: NSEnumerationOptions.concurrent) { (collection, _, _) in
+            
             let assets = PHAsset.fetchAssets(in: collection, options: nil)
             assets.enumerateObjects(options: NSEnumerationOptions.concurrent, using: { (asset, index, stop) in
                 self.photoAssets = assets.lastObject
@@ -53,11 +95,13 @@ class CommitRootViewController: UIViewController {
     }
     
     private func convertImage(with assets: PHAsset) {
+        
         let imageManager = PHCachingImageManager()
         let options = PHImageRequestOptions()
         options.deliveryMode = .fastFormat
         options.isSynchronous = true
         imageManager.requestImageData(for: assets, options: options) { (data, string, orientation, anyHashable) in
+            
             self.images.append(UIImage(data: data!)!)
             self.collectionView.reloadData()
         }
@@ -68,11 +112,14 @@ class CommitRootViewController: UIViewController {
     }
     
     @objc private func done() {
+        
         self.performSegue(withIdentifier: "toCommitView", sender: self.imageView.image)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "toCommitView" {
+            
             let destination = segue.destination as! CommitViewController
             destination.image = self.imageView.image
         }
@@ -80,27 +127,34 @@ class CommitRootViewController: UIViewController {
 }
 
 extension CommitRootViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
+        
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(with: CommitRootViewCell.self, for: indexPath) as! CommitRootViewCell
         cell.imageView.image = images[indexPath.row]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         self.imageView.image = images[indexPath.row]
     }
 }
 
 extension CommitRootViewController: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         let numberOfMargin: CGFloat = 8.0
         let width: CGFloat = (collectionView.frame.size.width - cellMargin * numberOfMargin) / 3
         let height: CGFloat = width
@@ -108,11 +162,31 @@ extension CommitRootViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
         return cellMargin
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        
         return cellMargin
     }
     
+}
+
+extension CommitRootViewController: TwicketSegmentedControlDelegate {
+    
+    fileprivate enum Segment: Int {
+        
+        case photoLibrary
+        case camera
+        
+        static func titles() -> [String] {
+            
+            return ["Library", "Camera"]
+        }
+    }
+    
+    func didSelect(_ segmentIndex: Int) {
+        
+    }
 }

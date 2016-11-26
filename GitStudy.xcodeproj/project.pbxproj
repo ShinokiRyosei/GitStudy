@@ -35,6 +35,7 @@
 		39A778841DB3BD0E0047DDB1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A778831DB3BD0E0047DDB1 /* TabBarController.swift */; };
 		39E8FD741DBB269300CB357D /* CommitLargeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E8FD721DBB269300CB357D /* CommitLargeTableViewCell.swift */; };
 		39E8FD751DBB269300CB357D /* CommitLargeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39E8FD731DBB269300CB357D /* CommitLargeTableViewCell.xib */; };
+		39E8FD781DBB398400CB357D /* TwicketSegmentedControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39E8FD771DBB398400CB357D /* TwicketSegmentedControl.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -83,6 +84,7 @@
 		39A778851DB3E6CA0047DDB1 /* FontAwesome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome.framework; path = Carthage/Build/iOS/FontAwesome.framework; sourceTree = "<group>"; };
 		39E8FD721DBB269300CB357D /* CommitLargeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommitLargeTableViewCell.swift; path = CommitLarge/CommitLargeTableViewCell.swift; sourceTree = "<group>"; };
 		39E8FD731DBB269300CB357D /* CommitLargeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommitLargeTableViewCell.xib; path = CommitLarge/CommitLargeTableViewCell.xib; sourceTree = "<group>"; };
+		39E8FD771DBB398400CB357D /* TwicketSegmentedControl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwicketSegmentedControl.framework; path = Carthage/Build/iOS/TwicketSegmentedControl.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39E8FD781DBB398400CB357D /* TwicketSegmentedControl.framework in Frameworks */,
 				3993E2E11DB2927E00DF922B /* JEToolkit.framework in Frameworks */,
 				3993E2DB1DB2826D00DF922B /* Realm.framework in Frameworks */,
 				3993E2DC1DB2826D00DF922B /* RealmSwift.framework in Frameworks */,
@@ -110,6 +113,7 @@
 		3993E2D61DB2826C00DF922B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				39E8FD771DBB398400CB357D /* TwicketSegmentedControl.framework */,
 				39A778851DB3E6CA0047DDB1 /* FontAwesome.framework */,
 				3993E2E01DB2927E00DF922B /* JEToolkit.framework */,
 				3993E2D71DB2826D00DF922B /* IoniconsKit.framework */,
@@ -398,6 +402,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/JEToolkit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/TwicketSegmentedControl.framework",
 			);
 			outputPaths = (
 			);
