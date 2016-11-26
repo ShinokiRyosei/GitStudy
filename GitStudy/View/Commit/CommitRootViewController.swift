@@ -8,6 +8,8 @@
 
 import UIKit
 import Photos
+import AVFoundation
+
 import JEToolkit
 import TwicketSegmentedControl
 
@@ -22,11 +24,9 @@ class CommitRootViewController: UIViewController {
         }
     }
     
-    let cellMargin: CGFloat = 2.0
-    
-    var photoAssets: PHAsset?
-    
-    var images: [UIImage] = []
+    fileprivate let cellMargin: CGFloat = 2.0
+    private var photoAssets: PHAsset?
+    fileprivate var images: [UIImage] = []
     
     @IBOutlet var collectionView: UICollectionView! {
         didSet {
@@ -37,7 +37,19 @@ class CommitRootViewController: UIViewController {
         }
     }
     
+    @IBOutlet private var cameraOutputView: UIView!
+    @IBOutlet private var shutterButton: UIButton!
+    
+    private var input: AVCaptureDeviceInput!
+    private var output: AVCapturePhotoOutput!
+    private var session: AVCaptureSession!
+    private var camera: AVCaptureDevice!
+    
+    fileprivate var albumView: UIView?
+    fileprivate var cameraView: UIView?
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         self.setDoneBtn()
@@ -47,6 +59,22 @@ class CommitRootViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         self.fetchAllImage()
+        
+    }
+    
+    override func loadView() {
+        self.albumView = UINib(nibName: "CommitRootAlbumView", bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView
+        self.cameraView = UINib(nibName: "CommitRootCameraView", bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView
+        
+        if let view: UIView = self.albumView {
+            self.view = view
+        }
+    }
+    
+    private func setupCamera() {
+        
+        session = AVCaptureSession()
+
     }
     
     private func setNavBar() {
