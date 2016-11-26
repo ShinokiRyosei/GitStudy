@@ -8,21 +8,35 @@
 
 import UIKit
 
+
+// MARK: HomeViewCell
+
 class HomeViewCell: UICollectionViewCell {
     
-    @IBOutlet private weak var view: UIView!
     
-    func applyColor(of hasContribution: Bool = false) {
+    // MARK: Internal 
+    
+    internal func applyColor(of hasContribution: Bool = false) {
+        
         if hasContribution {
+            
             view.backgroundColor = UIColor.middleGreen
         }else {
+            
             view.backgroundColor = UIColor.lightGray
         }
     }
+    
+    
+    // MARK: UICollectionViewCell
 
     override func awakeFromNib() {
+        
         super.awakeFromNib()
-        // Initialization code
     }
-
+    
+    
+    // MARK: Private
+    
+    @IBOutlet private weak var view: UIView!
 }

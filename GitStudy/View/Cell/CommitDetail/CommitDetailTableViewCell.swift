@@ -8,20 +8,34 @@
 
 import UIKit
 
+
+// MARK: CommitDetailTableViewCell
+
 class CommitDetailTableViewCell: UITableViewCell {
     
-    @IBOutlet private weak var commitImageView: UIImageView!
-    @IBOutlet private weak var dateLabel: UILabel!
-    @IBOutlet private weak var commitMessageLabel: UILabel!
     
-    func applyModel(of model: Commit?) {
+    // MARK: Internal
+    
+    internal func applyModel(of model: Commit?) {
+        
         guard let commit: Commit = model else { return }
         commitImageView.image = commit.image
         dateLabel.text = commit.createdAt.formatDate()
         commitMessageLabel.text = commit.message
     }
+    
+    
+    // MARK: UITableViewCell
 
     override func awakeFromNib() {
+        
         super.awakeFromNib()
     }
+    
+    
+    // MARK: Private
+    
+    @IBOutlet private weak var commitImageView: UIImageView!
+    @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var commitMessageLabel: UILabel!
 }

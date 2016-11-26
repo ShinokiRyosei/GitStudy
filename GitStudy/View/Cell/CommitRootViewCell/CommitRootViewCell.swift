@@ -8,13 +8,21 @@
 
 import UIKit
 
+
+// MARK: - CommitRootViewCell
+
 class CommitRootViewCell: UICollectionViewCell {
     
-    @IBOutlet var imageView: UIImageView!
+    
+    // MARK: Internal
+    
+    @IBOutlet internal var imageView: UIImageView!
+    
+    
+    // MARK: UICollectionViewCell
 
     override func awakeFromNib() {
+        
         super.awakeFromNib()
-        // Initialization code
     }
-
 }
