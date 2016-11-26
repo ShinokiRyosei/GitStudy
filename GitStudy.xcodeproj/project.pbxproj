@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3920CE651DE9CF7600636C84 /* CommitRootCameraView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3920CE641DE9CF7600636C84 /* CommitRootCameraView.xib */; };
+		3920CE671DE9CFB400636C84 /* CommitRootAlbumView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3920CE661DE9CFB400636C84 /* CommitRootAlbumView.xib */; };
 		3993E2DB1DB2826D00DF922B /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3993E2D81DB2826D00DF922B /* Realm.framework */; };
 		3993E2DC1DB2826D00DF922B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3993E2D91DB2826D00DF922B /* RealmSwift.framework */; };
 		3993E2DF1DB2878400DF922B /* CommitNumber_Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3993E2DE1DB2878400DF922B /* CommitNumber_Commit.swift */; };
@@ -52,6 +54,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3920CE641DE9CF7600636C84 /* CommitRootCameraView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommitRootCameraView.xib; sourceTree = "<group>"; };
+		3920CE661DE9CFB400636C84 /* CommitRootAlbumView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommitRootAlbumView.xib; sourceTree = "<group>"; };
 		3993E2D71DB2826D00DF922B /* IoniconsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IoniconsKit.framework; path = Carthage/Build/iOS/IoniconsKit.framework; sourceTree = "<group>"; };
 		3993E2D81DB2826D00DF922B /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		3993E2D91DB2826D00DF922B /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
@@ -269,6 +273,8 @@
 			isa = PBXGroup;
 			children = (
 				39979BDE1DAA20F5006A37DC /* CommitRootViewController.swift */,
+				3920CE641DE9CF7600636C84 /* CommitRootCameraView.xib */,
+				3920CE661DE9CFB400636C84 /* CommitRootAlbumView.xib */,
 				39979BDF1DAA20F5006A37DC /* CommitViewController */,
 			);
 			path = Commit;
@@ -346,7 +352,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = ShinokiRyosei;
 				TargetAttributes = {
 					39979BB21DAA209C006A37DC = {
@@ -381,7 +387,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				39979BC11DAA209C006A37DC /* LaunchScreen.storyboard in Resources */,
+				3920CE671DE9CFB400636C84 /* CommitRootAlbumView.xib in Resources */,
 				39A7787F1DB3896E0047DDB1 /* CommitDetailTableViewCell.xib in Resources */,
+				3920CE651DE9CF7600636C84 /* CommitRootCameraView.xib in Resources */,
 				39E8FD751DBB269300CB357D /* CommitLargeTableViewCell.xib in Resources */,
 				39979BBE1DAA209C006A37DC /* Assets.xcassets in Resources */,
 				39979BBC1DAA209C006A37DC /* Main.storyboard in Resources */,
@@ -478,6 +486,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -527,6 +536,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
