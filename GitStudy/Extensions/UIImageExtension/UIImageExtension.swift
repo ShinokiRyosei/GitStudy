@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 extension UIImage {
-    func resize() -> UIImage? {
+    
+    internal func resize() -> UIImage? {
+        
         let size: CGSize = CGSize(width: 150, height: 150)
         let widthRatio = size.width / self.size.width
         let heightRatio = size.height / self.size.height
