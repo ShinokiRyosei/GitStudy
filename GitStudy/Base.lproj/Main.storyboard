@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3iB-ab-Kds">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3iB-ab-Kds">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,6 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cuB-JY-2R9">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7D5-lc-tia">
                                     <size key="itemSize" width="50" height="50"/>
@@ -62,6 +66,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aQ6-0D-uAp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -123,55 +128,8 @@
         <scene sceneID="LRv-A0-qd7">
             <objects>
                 <viewController id="1NN-wj-6QV" customClass="CommitRootViewController" customModule="GitStudy" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1NV-p2-hu8"/>
-                        <viewControllerLayoutGuide type="bottom" id="bR8-5d-Z4X"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9ud-fJ-T30">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fsb-m9-pWB">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="58o-71-bKX">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kLw-eC-GcV">
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="kLw-eC-GcV" secondAttribute="height" multiplier="16:9" id="hBF-YP-TLw"/>
-                                </constraints>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="scW-wf-yto" customClass="TwicketSegmentedControl" customModule="TwicketSegmentedControl">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="mqM-ke-qgc"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="scW-wf-yto" firstAttribute="leading" secondItem="9ud-fJ-T30" secondAttribute="leading" id="2ET-CV-X4i"/>
-                            <constraint firstItem="kLw-eC-GcV" firstAttribute="top" secondItem="scW-wf-yto" secondAttribute="bottom" constant="8" id="FkL-lo-q8k"/>
-                            <constraint firstItem="Fsb-m9-pWB" firstAttribute="leading" secondItem="9ud-fJ-T30" secondAttribute="leading" id="IIH-fh-d8Y"/>
-                            <constraint firstItem="kLw-eC-GcV" firstAttribute="leading" secondItem="9ud-fJ-T30" secondAttribute="leading" id="anx-9z-P6a"/>
-                            <constraint firstAttribute="trailing" secondItem="Fsb-m9-pWB" secondAttribute="trailing" id="bp9-ZU-K67"/>
-                            <constraint firstAttribute="trailing" secondItem="kLw-eC-GcV" secondAttribute="trailing" id="fjY-Iu-eTe"/>
-                            <constraint firstItem="scW-wf-yto" firstAttribute="top" secondItem="1NV-p2-hu8" secondAttribute="bottom" id="gJO-4z-ORR"/>
-                            <constraint firstAttribute="trailing" secondItem="scW-wf-yto" secondAttribute="trailing" id="phL-96-V64"/>
-                            <constraint firstItem="Fsb-m9-pWB" firstAttribute="top" secondItem="kLw-eC-GcV" secondAttribute="bottom" constant="-44" id="qMX-sX-aBc"/>
-                            <constraint firstItem="bR8-5d-Z4X" firstAttribute="top" secondItem="Fsb-m9-pWB" secondAttribute="bottom" id="szX-Os-spa"/>
-                        </constraints>
-                    </view>
                     <navigationItem key="navigationItem" id="qx9-HV-mta"/>
                     <connections>
-                        <outlet property="collectionView" destination="Fsb-m9-pWB" id="5H1-HL-XRs"/>
-                        <outlet property="imageView" destination="kLw-eC-GcV" id="JIV-he-Qam"/>
-                        <outlet property="segmentedControl" destination="scW-wf-yto" id="BLe-zR-DTI"/>
                         <segue destination="8xr-TW-2sb" kind="show" identifier="toCommitView" id="OA2-s7-F5T">
                             <nil key="action"/>
                         </segue>
@@ -194,11 +152,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ah9-Ty-2AG">
+                                <rect key="frame" x="16" y="82" width="343" height="193"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ah9-Ty-2AG" secondAttribute="height" multiplier="16:9" id="MvT-Ob-J5r"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WaU-dh-lp0">
+                                <rect key="frame" x="16" y="292" width="343" height="157"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="157" id="4ej-TN-aBJ"/>
@@ -207,6 +167,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aeS-1E-wkt">
+                                <rect key="frame" x="16" y="463" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
