@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommitRootViewController" customModule="GitStudy" customModuleProvider="target">
+            <connections>
+                <outlet property="cameraOutputView" destination="0RZ-lX-upI" id="gQy-1Y-jrL"/>
+                <outlet property="shutterButton" destination="kpa-nq-hhG" id="fMi-Xp-Ite"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0RZ-lX-upI">
+                    <rect key="frame" x="0.0" y="65" width="375" height="211"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="0RZ-lX-upI" secondAttribute="height" multiplier="16:9" id="Wrm-dd-gy6"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpi-5R-DG4">
+                    <rect key="frame" x="0.0" y="276" width="375" height="336"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpa-nq-hhG">
+                            <rect key="frame" x="158" y="139" width="59" height="59"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="59" id="QH2-wM-TaJ"/>
+                                <constraint firstAttribute="width" constant="59" id="WeI-Pw-RqS"/>
+                            </constraints>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="kpa-nq-hhG" firstAttribute="centerX" secondItem="mpi-5R-DG4" secondAttribute="centerX" id="KNl-Ni-trb"/>
+                        <constraint firstItem="kpa-nq-hhG" firstAttribute="centerY" secondItem="mpi-5R-DG4" secondAttribute="centerY" id="hhB-bg-PoV"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="mpi-5R-DG4" secondAttribute="bottom" constant="55" id="3HS-MN-Dao"/>
+                <constraint firstAttribute="trailing" secondItem="0RZ-lX-upI" secondAttribute="trailing" id="Ek0-8z-DM1"/>
+                <constraint firstAttribute="trailing" secondItem="mpi-5R-DG4" secondAttribute="trailing" id="J4X-mo-DQS"/>
+                <constraint firstItem="mpi-5R-DG4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Xik-L9-e4m"/>
+                <constraint firstItem="0RZ-lX-upI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="65" id="iUw-P9-RyV"/>
+                <constraint firstItem="mpi-5R-DG4" firstAttribute="top" secondItem="0RZ-lX-upI" secondAttribute="bottom" id="lXv-dL-BDj"/>
+                <constraint firstItem="0RZ-lX-upI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pqT-hl-AwE"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="55.5"/>
+        </view>
+    </objects>
+</document>
