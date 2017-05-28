@@ -7,7 +7,11 @@
 //
 
 import UIKit
+
 import RealmSwift
+
+
+// MARK: - Commit
 
 class Commit: Object {
     
@@ -17,18 +21,23 @@ class Commit: Object {
     dynamic var message: String!
     dynamic private var _image: UIImage? = nil
     dynamic var image: UIImage? {
+        
         set {
+            
             self._image = newValue
             if let value = newValue {
                 self.imageData = UIImagePNGRepresentation(value)
             }
         }
         get {
+            
             if let image = self._image {
+                
                 return image
             }
             
             if let data = self.imageData {
+                
                 self._image = UIImage(data: data)
                 return self._image
             }
@@ -41,15 +50,27 @@ class Commit: Object {
     dynamic var subject: Int = 0
     
     override static func primaryKey() -> String? {
+        
         return "id"
     }
     
     override static func ignoredProperties() -> [String] {
+        
         return ["image", "_image"]
     }
     
-    static func create(message: String?, image: UIImage, createdAt: Date, subject: Int) -> Commit?{
+    internal func save() {
+        
+        try! Commit.realm.write {
+            
+            Commit.realm.add(self)
+        }
+    }
+    
+    static internal func create(message: String?, image: UIImage, createdAt: Date, subject: Int) -> Commit? {
+        
         guard let mes: String = message else {
+            
             return nil
         }
         let commit = Commit()
@@ -61,17 +82,14 @@ class Commit: Object {
         return commit
     }
     
-    
-    func save() {
-        try! Commit.realm.write {
-            Commit.realm.add(self)
-        }
-    }
-    
-    static func lastId() -> Int {
-        if let todo = realm.objects(Commit.self).sorted(byProperty: "id", ascending: false).first {
+    static internal func lastId() -> Int {
+        
+        if let todo = realm.objects(Commit.self).sorted(byKeyPath: "id", ascending: false).first {
+            
             return todo.id + 1
-        }else {
+        }
+        else {
+            
             return 1
         }
     }

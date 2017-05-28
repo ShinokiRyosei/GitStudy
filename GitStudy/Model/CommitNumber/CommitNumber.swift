@@ -7,43 +7,54 @@
 //
 
 import UIKit
+
 import RealmSwift
+
+
+// MARK: - CommitNumber
 
 class CommitNumber: Object {
     
-    static let realm = try! Realm()
+    static private let realm = try! Realm()
     
-    dynamic var id: Int = 0
-    dynamic var contributions: Int = 0
-    dynamic var createdAt: Date!
+    dynamic internal var id: Int = 0
+    dynamic internal var contributions: Int = 0
+    dynamic internal var createdAt: Date!
     
-    static func hasContributions(at createdAt: Date) -> CommitNumber? {
+    static internal func hasContributions(at createdAt: Date) -> CommitNumber? {
+        
         if let num = realm.objects(CommitNumber.self).filter("createdAt == %@", createdAt).first {
+            
             return num
         }else {
+            
             return nil
         }
     }
     
     
-    static func save(createdAt: Date) -> CommitNumber {
+    static internal func save(createdAt: Date) -> CommitNumber {
+        
         let num = CommitNumber()
         num.id = num.lastId()
         num.createdAt = createdAt
         num.contributions = 1
         try! CommitNumber.realm.write {
+            
             CommitNumber.realm.add(num)
         }
         return num
     }
     
-    static func fetch(with id: Int) -> CommitNumber? {
+    static internal func fetch(with id: Int) -> CommitNumber? {
+        
         let object = CommitNumber.realm.objects(CommitNumber.self).filter("id == %d", id).first
         return object
     }
     
-    static func fetch() -> [CommitNumber] {
-        let objects = realm.objects(CommitNumber.self).sorted(byProperty: "createdAt", ascending: false)
+    static internal func fetch() -> [CommitNumber] {
+        
+        let objects = realm.objects(CommitNumber.self).sorted(byKeyPath: "createdAt", ascending: false)
         var arr: [CommitNumber] = []
         for i in objects {
             arr.append(i)
@@ -51,24 +62,31 @@ class CommitNumber: Object {
         return arr
     }
     
-    static func countMax() -> Int? {
-        if let commitNumber = CommitNumber.realm.objects(CommitNumber.self).sorted(byProperty: "contributions", ascending: false).first {
+    static internal func countMax() -> Int? {
+        
+        if let commitNumber = CommitNumber.realm.objects(CommitNumber.self).sorted(byKeyPath: "contributions", ascending: false).first {
+            
             return commitNumber.contributions
         }
         return nil
     }
     
-    func update() {
+    internal func update() {
+        
         try! CommitNumber.realm.write {
+            
             self.contributions = self.contributions + 1
         }
     }
     
     
-    func lastId() -> Int {
-        if let num = CommitNumber.realm.objects(CommitNumber.self).sorted(byProperty: "id", ascending: false).first {
+    internal func lastId() -> Int {
+        
+        if let num = CommitNumber.realm.objects(CommitNumber.self).sorted(byKeyPath: "id", ascending: false).first {
+            
             return num.id + 1
         }else {
+            
             return 1
         }
     }
