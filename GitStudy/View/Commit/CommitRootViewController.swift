@@ -13,10 +13,14 @@ import AVFoundation
 import JEToolkit
 import TwicketSegmentedControl
 
+
+// MARK: - CommitRootViewController
+
 class CommitRootViewController: UIViewController {
     
     @IBOutlet fileprivate weak var imageView: UIImageView!
     @IBOutlet private weak var segmentedControl: TwicketSegmentedControl! {
+        
         didSet {
             
             segmentedControl.delegate = self
@@ -126,7 +130,10 @@ class CommitRootViewController: UIViewController {
     }
 }
 
-extension CommitRootViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
+// MARK: - UICollectionViewDataSource
+
+extension CommitRootViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         
@@ -144,12 +151,21 @@ extension CommitRootViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.imageView.image = images[indexPath.row]
         return cell
     }
+}
+
+
+// MARK: - UICollectionViewDelegate
+
+extension CommitRootViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         self.imageView.image = images[indexPath.row]
     }
 }
+
+
+// MARK: - UICollectionViewDelegateFlowLayout
 
 extension CommitRootViewController: UICollectionViewDelegateFlowLayout {
     
@@ -172,6 +188,9 @@ extension CommitRootViewController: UICollectionViewDelegateFlowLayout {
     }
     
 }
+
+
+// MARK: - TwicketSegmentedControlDelegate
 
 extension CommitRootViewController: TwicketSegmentedControlDelegate {
     

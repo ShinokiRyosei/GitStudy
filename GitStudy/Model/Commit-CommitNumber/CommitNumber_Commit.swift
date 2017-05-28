@@ -48,7 +48,7 @@ class CommitNumber_Commit: Object {
     
     static internal func lastId() -> Int {
         
-        if let join = realm.objects(CommitNumber_Commit.self).sorted(byProperty: "id", ascending: false).first {
+        if let join = realm.objects(CommitNumber_Commit.self).sorted(byKeyPath: "id", ascending: false).first {
             
             return join.id + 1
         }else {

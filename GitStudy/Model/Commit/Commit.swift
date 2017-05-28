@@ -84,7 +84,7 @@ class Commit: Object {
     
     static internal func lastId() -> Int {
         
-        if let todo = realm.objects(Commit.self).sorted(byProperty: "id", ascending: false).first {
+        if let todo = realm.objects(Commit.self).sorted(byKeyPath: "id", ascending: false).first {
             
             return todo.id + 1
         }

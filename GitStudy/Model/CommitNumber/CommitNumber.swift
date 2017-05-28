@@ -54,7 +54,7 @@ class CommitNumber: Object {
     
     static internal func fetch() -> [CommitNumber] {
         
-        let objects = realm.objects(CommitNumber.self).sorted(byProperty: "createdAt", ascending: false)
+        let objects = realm.objects(CommitNumber.self).sorted(byKeyPath: "createdAt", ascending: false)
         var arr: [CommitNumber] = []
         for i in objects {
             arr.append(i)
@@ -64,7 +64,7 @@ class CommitNumber: Object {
     
     static internal func countMax() -> Int? {
         
-        if let commitNumber = CommitNumber.realm.objects(CommitNumber.self).sorted(byProperty: "contributions", ascending: false).first {
+        if let commitNumber = CommitNumber.realm.objects(CommitNumber.self).sorted(byKeyPath: "contributions", ascending: false).first {
             
             return commitNumber.contributions
         }
@@ -82,7 +82,7 @@ class CommitNumber: Object {
     
     internal func lastId() -> Int {
         
-        if let num = CommitNumber.realm.objects(CommitNumber.self).sorted(byProperty: "id", ascending: false).first {
+        if let num = CommitNumber.realm.objects(CommitNumber.self).sorted(byKeyPath: "id", ascending: false).first {
             
             return num.id + 1
         }else {
