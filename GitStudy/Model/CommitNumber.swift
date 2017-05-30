@@ -20,6 +20,7 @@ class CommitNumber: Object {
     dynamic internal var id: Int = 0
     dynamic internal var contributions: Int = 0
     dynamic internal var createdAt: Date!
+    internal var commits = List<Commit>()
     
     static internal func hasContributions(at createdAt: Date) -> CommitNumber? {
         
@@ -48,18 +49,13 @@ class CommitNumber: Object {
     
     static internal func fetch(with id: Int) -> CommitNumber? {
         
-        let object = CommitNumber.realm.objects(CommitNumber.self).filter("id == %d", id).first
+        let object = realm.objects(CommitNumber.self).filter("id == %d", id).first
         return object
     }
     
-    static internal func fetch() -> [CommitNumber] {
-        
-        let objects = realm.objects(CommitNumber.self).sorted(byKeyPath: "createdAt", ascending: false)
-        var arr: [CommitNumber] = []
-        for i in objects {
-            arr.append(i)
-        }
-        return arr
+    static internal func fetch() -> Results<CommitNumber> {
+
+        return realm.objects(CommitNumber.self).sorted(byKeyPath: "createdAt", ascending: false)
     }
     
     static internal func countMax() -> Int? {

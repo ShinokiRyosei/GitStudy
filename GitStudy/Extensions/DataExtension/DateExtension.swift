@@ -25,7 +25,7 @@ extension Date {
         return formatter.string(from: self)
     }
     
-    internal func day() -> Date {
+    internal func today() -> Date {
         
         let calendar: Calendar = Calendar.current
         let dateComponents = calendar.dateComponents([.year, .month, .day], from: self)
@@ -53,6 +53,13 @@ extension Date {
         
         let cal = Calendar.current
         let components = cal.dateComponents([.day], from: self, to: date)
+        return components.day!
+    }
+
+    internal func day() -> Int {
+
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.day], from: self)
         return components.day!
     }
 }

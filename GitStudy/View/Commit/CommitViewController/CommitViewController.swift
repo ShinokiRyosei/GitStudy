@@ -10,20 +10,24 @@ import UIKit
 
 class CommitViewController: UIViewController {
     
-    @IBOutlet var imageView: UIImageView! {
+    @IBOutlet private dynamic weak var imageView: UIImageView! {
+
         didSet {
+
             imageView.image = image
         }
     }
-    @IBOutlet var textView: UITextView! {
+    @IBOutlet private dynamic weak var textView: UITextView! {
+
         didSet {
+
             textView.delegate = self
         }
     }
     
-    @IBOutlet var textField: UITextField!
-    var toolBar: UIToolbar!
-    var pickerView: UIPickerView!
+    @IBOutlet fileprivate dynamic weak var textField: UITextField!
+
+
     var image: UIImage?
     var subject: Subjects = .other
     
@@ -37,18 +41,21 @@ class CommitViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         textView.becomeFirstResponder()
         image = image?.resize()
         imageView.image = image
     }
     
     private func setNavbar() {
+
         self.navigationController?.title = "Commit"
     }
     
     private func setup() {
-        pickerView = UIPickerView()
-        toolBar = UIToolbar(frame: CGRect(x: 0, y: self.view.frame.size.height/6, width: self.view.frame.size.width, height: 40.0))
+
+        let pickerView = UIPickerView()
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: self.view.frame.size.height/6, width: self.view.frame.size.width, height: 40.0))
         toolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
         toolBar.backgroundColor = UIColor.black
         toolBar.barStyle = UIBarStyle.black
@@ -56,7 +63,7 @@ class CommitViewController: UIViewController {
         textField.inputView = pickerView
         pickerView.delegate = self
         pickerView.dataSource = self
-        let toolBarButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(self.close))
+        let toolBarButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(close))
         toolBarButton.tag = 1
         toolBar.items = [toolBarButton]
         textField.inputAccessoryView = toolBar
@@ -76,7 +83,7 @@ class CommitViewController: UIViewController {
         textView.inputAccessoryView = kbToolBar
     }
     
-    @objc private func textViewDone() {
+    private dynamic func textViewDone() {
         textView.resignFirstResponder()
     }
     
@@ -91,27 +98,29 @@ class CommitViewController: UIViewController {
     }
     
     private func setCommitBtn() {
+
         let leftBtn: UIBarButtonItem = UIBarButtonItem(title: "Commit", style: .done, target: self, action: #selector(self.commit))
         self.navigationItem.rightBarButtonItem = leftBtn
     }
     
-    @objc private func commit() {
+    private dynamic func commit() {
+
         let now = Date()
-        guard let img: UIImage = image else {
+        guard let image: UIImage = image else {
+
             return
         }
-        let commit = Commit.create(message: textView.text, image: img, createdAt: now, subject: subject.hashValue)
+        let commit = Commit.instantiate(message: textView.text, image: image, createdAt: now, subject: subject.hashValue)
         commit?.save()
-        if let commitNumber: CommitNumber = CommitNumber.hasContributions(at: now.day()) {
+        if let commitNumber: CommitNumber = CommitNumber.hasContributions(at: now.today()) {
             commitNumber.update()
-            CommitNumber_Commit.create(withCommit: commit!, withCommitNumber: commitNumber).save()
         }else {
-            let commitNumber = CommitNumber.save(createdAt: now.day())
-            CommitNumber_Commit.create(withCommit: commit!, withCommitNumber: commitNumber).save()
+            let commitNumber = CommitNumber.save(createdAt: now.today())
         }
     }
     
-    @objc private func close() {
+    private dynamic func close() {
+
         textField.resignFirstResponder()
     }
 }
@@ -127,19 +136,23 @@ extension CommitViewController: UITextViewDelegate {
 
 extension CommitViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+
         return subject.string(of: row)
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+
         subject.value(in: row)
         self.textField.text = subject.string(of: row)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
+
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+
         return subject.count()
     }
 }

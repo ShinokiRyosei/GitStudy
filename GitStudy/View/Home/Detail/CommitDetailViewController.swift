@@ -7,18 +7,21 @@
 //
 
 import UIKit
+import RealmSwift
 import JEToolkit
 
 class CommitDetailViewController: UIViewController {
     
     var model: CommitNumber!
-    
-    fileprivate var models: [CommitNumber_Commit]?
+
+    fileprivate var commits: List<Commit>?
     
     fileprivate var detailIndexPath: IndexPath?
     
-    @IBOutlet private weak var tableView: UITableView! {
+    @IBOutlet private dynamic weak var tableView: UITableView! {
+
         didSet {
+
             tableView.delegate = self
             tableView.dataSource = self
             tableView.estimatedRowHeight = 82
@@ -30,12 +33,14 @@ class CommitDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.setNavBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        models = self.fetch(with: model)
+
+        commits = model.commits
         tableView.reloadData()
     }
     
@@ -43,30 +48,31 @@ class CommitDetailViewController: UIViewController {
         self.title = "Commit Detail"
         self.navigationController?.navigationBar.tintColor = UIColor.whiteTheme
     }
-    
-    private func fetch(with model: CommitNumber) -> [CommitNumber_Commit]? {
-        let objects: [CommitNumber_Commit]? = CommitNumber_Commit.fetch(with: model)
-        return objects
-    }
 }
 
 extension CommitDetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
         detailIndexPath = indexPath
         tableView.reloadData()
     }
 }
 
 extension CommitDetailViewController: UITableViewDataSource {
+
     func numberOfSections(in tableView: UITableView) -> Int {
+
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let model: Commit = models?[indexPath.row].commit else {
+
+        guard let model: Commit = commits?[indexPath.row] else {
+
             return UITableViewCell()
         }
+
         if indexPath == detailIndexPath {
             let cell = tableView.dequeueReusableCell(with: CommitLargeTableViewCell.self, for: indexPath) as! CommitLargeTableViewCell
             cell.applyModel(with: model)
@@ -79,6 +85,7 @@ extension CommitDetailViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return models?.count ?? 0
+        
+        return commits?.count ?? 0
     }
 }

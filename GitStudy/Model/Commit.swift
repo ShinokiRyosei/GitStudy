@@ -67,15 +67,16 @@ class Commit: Object {
         }
     }
     
-    static internal func create(message: String?, image: UIImage, createdAt: Date, subject: Int) -> Commit? {
+    static internal func instantiate(message: String?, image: UIImage, createdAt: Date, subject: Int) -> Commit? {
         
-        guard let mes: String = message else {
+        guard let message: String = message else {
             
             return nil
         }
+        
         let commit = Commit()
         commit.id = lastId()
-        commit.message = mes
+        commit.message = message
         commit.image = image
         commit.createdAt = createdAt
         commit.subject = subject

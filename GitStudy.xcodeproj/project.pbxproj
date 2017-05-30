@@ -11,7 +11,6 @@
 		3920CE671DE9CFB400636C84 /* CommitRootAlbumView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3920CE661DE9CFB400636C84 /* CommitRootAlbumView.xib */; };
 		3993E2DB1DB2826D00DF922B /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3993E2D81DB2826D00DF922B /* Realm.framework */; };
 		3993E2DC1DB2826D00DF922B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3993E2D91DB2826D00DF922B /* RealmSwift.framework */; };
-		3993E2DF1DB2878400DF922B /* CommitNumber_Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3993E2DE1DB2878400DF922B /* CommitNumber_Commit.swift */; };
 		3993E2E11DB2927E00DF922B /* JEToolkit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3993E2E01DB2927E00DF922B /* JEToolkit.framework */; };
 		39979BB71DAA209C006A37DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BB61DAA209C006A37DC /* AppDelegate.swift */; };
 		39979BBC1DAA209C006A37DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39979BBA1DAA209C006A37DC /* Main.storyboard */; };
@@ -20,7 +19,6 @@
 		39979BE31DAA20F5006A37DC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BCB1DAA20F5006A37DC /* UIColor+Extension.swift */; };
 		39979BE41DAA20F5006A37DC /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BCD1DAA20F5006A37DC /* DateExtension.swift */; };
 		39979BE51DAA20F5006A37DC /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BCF1DAA20F5006A37DC /* UIImageExtension.swift */; };
-		39979BE61DAA20F5006A37DC /* Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BD21DAA20F5006A37DC /* Commit.swift */; };
 		39979BE71DAA20F5006A37DC /* Subjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BD41DAA20F5006A37DC /* Subjects.swift */; };
 		39979BE81DAA20F5006A37DC /* CommitRootViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BD81DAA20F5006A37DC /* CommitRootViewCell.swift */; };
 		39979BE91DAA20F5006A37DC /* CommitRootViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39979BD91DAA20F5006A37DC /* CommitRootViewCell.xib */; };
@@ -29,12 +27,13 @@
 		39979BEC1DAA20F5006A37DC /* CommitRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BDE1DAA20F5006A37DC /* CommitRootViewController.swift */; };
 		39979BED1DAA20F5006A37DC /* CommitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BE01DAA20F5006A37DC /* CommitViewController.swift */; };
 		39979BEE1DAA20F5006A37DC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39979BE21DAA20F5006A37DC /* HomeViewController.swift */; };
-		39A1F0E31DAA2AA800AE0EE2 /* CommitNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1F0E21DAA2AA800AE0EE2 /* CommitNumber.swift */; };
 		39A7787A1DB388200047DDB1 /* CommitDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A778791DB388200047DDB1 /* CommitDetailViewController.swift */; };
 		39A7787E1DB3896E0047DDB1 /* CommitDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7787C1DB3896E0047DDB1 /* CommitDetailTableViewCell.swift */; };
 		39A7787F1DB3896E0047DDB1 /* CommitDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39A7787D1DB3896E0047DDB1 /* CommitDetailTableViewCell.xib */; };
 		39A778821DB3BC990047DDB1 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A778811DB3BC990047DDB1 /* NavigationViewController.swift */; };
 		39A778841DB3BD0E0047DDB1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A778831DB3BD0E0047DDB1 /* TabBarController.swift */; };
+		39C74FA21EDD5BF2005E6A07 /* Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C74FA01EDD5BF2005E6A07 /* Commit.swift */; };
+		39C74FA31EDD5BF2005E6A07 /* CommitNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C74FA11EDD5BF2005E6A07 /* CommitNumber.swift */; };
 		39E8FD741DBB269300CB357D /* CommitLargeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E8FD721DBB269300CB357D /* CommitLargeTableViewCell.swift */; };
 		39E8FD751DBB269300CB357D /* CommitLargeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39E8FD731DBB269300CB357D /* CommitLargeTableViewCell.xib */; };
 		39E8FD781DBB398400CB357D /* TwicketSegmentedControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39E8FD771DBB398400CB357D /* TwicketSegmentedControl.framework */; };
@@ -59,7 +58,6 @@
 		3993E2D71DB2826D00DF922B /* IoniconsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IoniconsKit.framework; path = Carthage/Build/iOS/IoniconsKit.framework; sourceTree = "<group>"; };
 		3993E2D81DB2826D00DF922B /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		3993E2D91DB2826D00DF922B /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
-		3993E2DE1DB2878400DF922B /* CommitNumber_Commit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommitNumber_Commit.swift; path = "Commit-CommitNumber/CommitNumber_Commit.swift"; sourceTree = "<group>"; };
 		3993E2E01DB2927E00DF922B /* JEToolkit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JEToolkit.framework; path = Carthage/Build/iOS/JEToolkit.framework; sourceTree = "<group>"; };
 		39979BB31DAA209C006A37DC /* GitStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39979BB61DAA209C006A37DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +68,6 @@
 		39979BCB1DAA20F5006A37DC /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		39979BCD1DAA20F5006A37DC /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		39979BCF1DAA20F5006A37DC /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
-		39979BD21DAA20F5006A37DC /* Commit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commit.swift; sourceTree = "<group>"; };
 		39979BD41DAA20F5006A37DC /* Subjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subjects.swift; sourceTree = "<group>"; };
 		39979BD81DAA20F5006A37DC /* CommitRootViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitRootViewCell.swift; sourceTree = "<group>"; };
 		39979BD91DAA20F5006A37DC /* CommitRootViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommitRootViewCell.xib; sourceTree = "<group>"; };
@@ -79,13 +76,14 @@
 		39979BDE1DAA20F5006A37DC /* CommitRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitRootViewController.swift; sourceTree = "<group>"; };
 		39979BE01DAA20F5006A37DC /* CommitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitViewController.swift; sourceTree = "<group>"; };
 		39979BE21DAA20F5006A37DC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		39A1F0E21DAA2AA800AE0EE2 /* CommitNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitNumber.swift; sourceTree = "<group>"; };
 		39A778791DB388200047DDB1 /* CommitDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommitDetailViewController.swift; path = Detail/CommitDetailViewController.swift; sourceTree = "<group>"; };
 		39A7787C1DB3896E0047DDB1 /* CommitDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommitDetailTableViewCell.swift; path = CommitDetail/CommitDetailTableViewCell.swift; sourceTree = "<group>"; };
 		39A7787D1DB3896E0047DDB1 /* CommitDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommitDetailTableViewCell.xib; path = CommitDetail/CommitDetailTableViewCell.xib; sourceTree = "<group>"; };
 		39A778811DB3BC990047DDB1 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		39A778831DB3BD0E0047DDB1 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		39A778851DB3E6CA0047DDB1 /* FontAwesome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome.framework; path = Carthage/Build/iOS/FontAwesome.framework; sourceTree = "<group>"; };
+		39C74FA01EDD5BF2005E6A07 /* Commit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commit.swift; sourceTree = "<group>"; };
+		39C74FA11EDD5BF2005E6A07 /* CommitNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitNumber.swift; sourceTree = "<group>"; };
 		39E8FD721DBB269300CB357D /* CommitLargeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommitLargeTableViewCell.swift; path = CommitLarge/CommitLargeTableViewCell.swift; sourceTree = "<group>"; };
 		39E8FD731DBB269300CB357D /* CommitLargeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommitLargeTableViewCell.xib; path = CommitLarge/CommitLargeTableViewCell.xib; sourceTree = "<group>"; };
 		39E8FD771DBB398400CB357D /* TwicketSegmentedControl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwicketSegmentedControl.framework; path = Carthage/Build/iOS/TwicketSegmentedControl.framework; sourceTree = "<group>"; };
@@ -106,14 +104,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3993E2D51DB2810F00DF922B /* Join */ = {
-			isa = PBXGroup;
-			children = (
-				3993E2DE1DB2878400DF922B /* CommitNumber_Commit.swift */,
-			);
-			name = Join;
-			sourceTree = "<group>";
-		};
 		3993E2D61DB2826C00DF922B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,28 +194,11 @@
 		39979BD01DAA20F5006A37DC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				39979BD11DAA20F5006A37DC /* Commit */,
-				39979BD31DAA20F5006A37DC /* CommitNumber */,
-				3993E2D51DB2810F00DF922B /* Join */,
+				39C74FA01EDD5BF2005E6A07 /* Commit.swift */,
+				39C74FA11EDD5BF2005E6A07 /* CommitNumber.swift */,
 				39979BD41DAA20F5006A37DC /* Subjects.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		39979BD11DAA20F5006A37DC /* Commit */ = {
-			isa = PBXGroup;
-			children = (
-				39979BD21DAA20F5006A37DC /* Commit.swift */,
-			);
-			path = Commit;
-			sourceTree = "<group>";
-		};
-		39979BD31DAA20F5006A37DC /* CommitNumber */ = {
-			isa = PBXGroup;
-			children = (
-				39A1F0E21DAA2AA800AE0EE2 /* CommitNumber.swift */,
-			);
-			path = CommitNumber;
 			sourceTree = "<group>";
 		};
 		39979BD51DAA20F5006A37DC /* View */ = {
@@ -425,9 +398,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39C74FA21EDD5BF2005E6A07 /* Commit.swift in Sources */,
 				39979BE71DAA20F5006A37DC /* Subjects.swift in Sources */,
-				39A1F0E31DAA2AA800AE0EE2 /* CommitNumber.swift in Sources */,
-				39979BE61DAA20F5006A37DC /* Commit.swift in Sources */,
 				39979BE31DAA20F5006A37DC /* UIColor+Extension.swift in Sources */,
 				39979BE81DAA20F5006A37DC /* CommitRootViewCell.swift in Sources */,
 				39979BE41DAA20F5006A37DC /* DateExtension.swift in Sources */,
@@ -438,11 +410,11 @@
 				39A7787E1DB3896E0047DDB1 /* CommitDetailTableViewCell.swift in Sources */,
 				39A7787A1DB388200047DDB1 /* CommitDetailViewController.swift in Sources */,
 				39979BB71DAA209C006A37DC /* AppDelegate.swift in Sources */,
-				3993E2DF1DB2878400DF922B /* CommitNumber_Commit.swift in Sources */,
 				39979BEA1DAA20F5006A37DC /* HomeViewCell.swift in Sources */,
 				39979BED1DAA20F5006A37DC /* CommitViewController.swift in Sources */,
 				39E8FD741DBB269300CB357D /* CommitLargeTableViewCell.swift in Sources */,
 				39979BEE1DAA20F5006A37DC /* HomeViewController.swift in Sources */,
+				39C74FA31EDD5BF2005E6A07 /* CommitNumber.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

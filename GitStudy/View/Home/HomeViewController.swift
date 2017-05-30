@@ -7,16 +7,19 @@
 //
 
 import UIKit
+
 import JEToolkit
+import RealmSwift
 
 class HomeViewController: UIViewController {
     
     fileprivate let cellMargin: CGFloat = 2.0
-    fileprivate var numbers: [CommitNumber] = []
-    fileprivate var contributions: [[String: Int]] = []
+    fileprivate var contributions: Results<CommitNumber>?
     
     @IBOutlet private weak var collectionView: UICollectionView! {
+
         didSet {
+
             collectionView.delegate = self
             collectionView.dataSource = self
             collectionView.registerCellClass(HomeViewCell.self)
@@ -25,31 +28,15 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setNavBar()
+
+        self.title = "GitStudy"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        numbers = CommitNumber.fetch()
-        contributions = self.parse(numbers: numbers)
+
+        contributions = CommitNumber.fetch()
         collectionView.reloadData()
-    }
-    
-    private func setNavBar() {
-        self.title = "GitStudy"
-    }
-    
-    private func setTabBar() {
-    }
-    
-    private func parse(numbers: [CommitNumber]) -> [[String: Int]] {
-        let now = Date()
-        var arr: [[String: Int]] = []
-        for i in numbers {
-            let dict: [String: Int] = ["day": i.createdAt.past(to: now), "contributions": i.contributions, "model": i.id]
-            arr.append(dict)
-        }
-        return arr
     }
 }
 
@@ -65,7 +52,7 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(with: HomeViewCell.self, for: indexPath) as! HomeViewCell
-        if let contribution: [String: Int] = contributions.filter({ $0["day"]! == indexPath.row }).first {
+        if let contribution = contributions?.filter({ $0.createdAt.day() == indexPath.row }).first {
             cell.applyColor(of: true)
         }else {
             cell.applyColor()
@@ -74,7 +61,9 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
         if segue.identifier == "toDetail" {
+
             let destination = segue.destination as! CommitDetailViewController
             destination.model = sender as! CommitNumber
         }
@@ -82,19 +71,27 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 
 extension HomeViewController: UICollectionViewDelegate {
+
     private func toSegue(sender: Any?) {
+
         self.performSegue(withIdentifier: "toDetail", sender: sender)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let contribution: [String: Int] = contributions.filter({ $0["day"]! == indexPath.row }).first else { return }
-        let model = CommitNumber.fetch(with: contribution["model"]!)
+
+        guard let contribution = contributions?.filter({ $0.createdAt.day() == indexPath.row }).first else {
+            
+            return
+        }
+        let model = CommitNumber.fetch(with: contribution.id)
         self.toSegue(sender: model)
     }
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
         let numberOfMargin: CGFloat = 8.0
         let width: CGFloat = (collectionView.frame.size.width - cellMargin * numberOfMargin) / 14
         let height: CGFloat = width
@@ -102,10 +99,12 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+
         return cellMargin
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+
         return cellMargin
     }
 }
